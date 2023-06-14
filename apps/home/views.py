@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
+from .forms import CensusForm
+from .models import LastName, FirstName
 
 # Create your views here.
 @login_required(login_url="/login/")
@@ -11,6 +13,26 @@ def index(request):
 
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
+
+
+def forms(request):
+    if request.method == 'POST':
+        form = CensusForm(request.POST)
+        if form.is_valid():
+            # Process the form data
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            
+            # Render the template with the form inputs
+            return render(request, 'home/forms.html', {'first_name': first_name, 'last_name': last_name})
+    else:
+        form = CensusForm()
+
+    return render(request, 'home/forms.html', {'form': form})
+
+
+
+
 
 
 @login_required(login_url="/login/")

@@ -12,6 +12,7 @@ __pycache__/
 *.log
 
 # venv
+brgyenv
 
 # other
 .DS_Store
