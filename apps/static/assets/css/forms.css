@@ -140,14 +140,17 @@
   .boxGrid{
     padding: 10px;
     border: 2px solid black;
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center;
-    text-align: left; */
     color: black;
+    width: 60vw;
   }
   .titleSpan{
     text-decoration: underline;
-
+  }
+  .inputBorder{
+    border-color: #888585;
+    line-height: 1;
+    /* margin-right: 2px; */
+  }
+  .marg{
+    padding: 10px;
   }

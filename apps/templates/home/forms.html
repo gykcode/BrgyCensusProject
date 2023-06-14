@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} UI Forms {% endblock %} 
+<!-- {% block title %} UI Forms {% endblock %}  -->
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
@@ -53,7 +53,7 @@
 										</div>
 									</div>
 									<div class="row">
-									<div class="col-12 col-lg-8 m-auto">
+									<div class="col-12 col-lg-10 m-auto">
 										<form class="CensusForm" method="POST">
 											{% csrf_token %}
 											<!-- ----------------------------------------STEP 1--------------------------------------------- -->
@@ -64,28 +64,61 @@
 												</div>
 												
 												<div class="multisteps-form__content">
-													<div class="form-row mt-4">
-														<div class="col-12 col-sm-6">
-														<input class="multisteps-form__input form-control" type="text" placeholder="First Name" name="fName" required/>
-														</div>
-														<div class="col-12 col-sm-6 mt-4 mt-sm-0">
-														<input class="multisteps-form__input form-control" type="text" placeholder="Last Name"/>
-														</div>
-													</div>
 													<div class="button-row d-flex mt-4"> -->
 														<!-- <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button> -->
 														<!-- <button class="btn btn-success ml-auto" type="button" title="Send">Send</button>
 													</div>
 												</div>
 											</div> -->
-											<div class="form-row mt-4">
-												<div class="col-12 col-sm-6">
-												<input class="multisteps-form__input form-control" type="text" placeholder="First Name" name="fName" id="fName"/>
+											<div class="boxGrid form-row">
+												<div class="row justify-content-center col-12">
+													<div class="col-auto"><h3>GEOGRAPHIC IDENTIFICATION</h3></div>
+												</div><br><br>
+												<div class="row col-12 ">
+													<div class="col-6"><label for="province"><h4>PROVINCE: </h4></label></div>
+													<div class="col-4 font-weight-bold" id="province">METRO MANILA</div>
+												</div><br><br>
+												<div class="row col-12 ">
+													<div class="col-6"><label for="city_municipality"><h4>CITY/MUNICIPALITY: </h4></label></div>
+													<div class="col-4 font-weight-bold" id="city_municipality">PASIG CITY</div>
+												</div><br><br>
+												<div class="row col-12">
+													<div class="col-6"><label for="barangay"><h4>BARANGAY: </h4></label></div>
+													<div class="col-4 font-weight-bold" id="barangay">MANGGAHAN</div>
+												</div><br><br>
+												<div class="row col-12 marg">
+													<div class="col-6"><label for="EANumber"><h4>ENUMERATION AREA NUMBER: </h4></label></div>
+													{{ form.as_p }}
+												</div><br><br>
+												<div class="row col-12 marg">
+													<div class="col-6"><label for="BSerial"><h4>BUILDING SERIAL: </h4></label></div>
+													<input type="text" class="form-control col-2 inputBorder" id="BSerial">
+												</div><br><br>
+												<div class="row col-12 marg">
+													<div class="col-6"><label for="HUSerial"><h4>HOUSING UNIT SERIAL NUMBER: </h4></label></div>
+													<input type="text" class="form-control col-2 inputBorder" id="HUSerial">
+												</div><br><br>
+												<div class="row col-12 marg">
+													<div class="col-6"><label for="HSerial"><h4>HOUSEHOLD SERIAL NUMBER: </h4></label></div>
+													<input type="text" class="form-control col-2 inputBorder" id="HSerial"><br><br>
 												</div>
-												<div class="col-12 col-sm-6 mt-4 mt-sm-0">
-												<input class="multisteps-form__input form-control" type="text" placeholder="Last Name" name="lName" id="lName"/>
+												<div class="row col-12 marg">
+													<div class="col-6"><label for="LNResponse"><h4>LINE NUMBER OF THE RESPONDENTS: </h4></label></div>
+													<input type="number" class="form-control col-2 inputBorder" id="LNResponse">
+												</div>
+												<div class="row col-12 marg">
+													<div class="col-4"><label for="HHName"><h4>NAME OF THE HOUSEHOLD HEAD: </h4></label></div>
+													<input type="text" class="form-control col-3 inputBorder mb-2" id="LName" placeholder="Enter Last Name">
+													<input type="text" class="form-control col-3 inputBorder mb-2 ml-1" id="FName" placeholder="Enter First Name">
+												</div>
+												<div class="row col-12 marg">
+													<div class="col-4"><label for="Address"><h4>ADDRESS: </h4></label></div>
+													<input type="text" class="form-control col-8 inputBorder" id="Address"
+													placeholder="HOUSE/BUILDING NUMBER AND STREET OR SITIO/PUROK NAME">
 												</div>
 											</div>
+											
+				
 											<div class="button-row d-flex mt-4"> 
 												<!-- <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button> -->
 												<button class="btn btn-success ml-auto" onclick="test()" type="button" title="Send">Send</button>
@@ -171,11 +204,11 @@
 											</div> -->
 										</form>
 										<!-- -----------------Test--------------------------- -->
-										<h2>First Name:</h2>
+										<!-- <h2>First Name:</h2>
 										<p>{{ first_name }}</p>
 
 										<h2>Last Name:</h2>
-										<p>{{ last_name }}</p>
+										<p>{{ last_name }}</p> -->
 									</div>
 									</div>
 								</div>
