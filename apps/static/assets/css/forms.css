@@ -206,3 +206,6 @@ hr {
   height: 1.5px;
   margin: 5px;
 }
+.custom-row {
+  display: flex;
+}
