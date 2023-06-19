@@ -11,5 +11,15 @@ class CensusForm(forms.ModelForm):
     # address = forms.CharField(max_length=200)
     class Meta:
         model = CensusFormModel
-        fields = '__all__'  # Or specify the specific fields you want to include
+        fields = ('enumeration_area_number','building_serial', 'housing_unit_serial_number', 'household_serial_number', 'line_number_respondents', 'last_name', 'first_name', 'address')  # Or specify the specific fields you want to include
+
+        # widget = {
+        #     'enumeration_area_number': forms.TextInput(attrs={'class'})
+        #     'building_serial':
+        #     'housing_unit_serial_number':
+        #     'line_number_respondents':
+        #     'last_name':
+        #     'first_name':
+        #     'address':
+        # }
 

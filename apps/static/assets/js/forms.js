@@ -1,21 +1,14 @@
-const DOMstrings = {
-  stepsBtnClass: 'multisteps-form__progress-btn',
-  stepsBtns: document.querySelectorAll(`.multisteps-form__progress-btn`),
-  stepsBar: document.querySelector('.multisteps-form__progress'),
-  stepsForm: document.querySelector('.CensusForm'),
-  stepsFormTextareas: document.querySelectorAll('.multisteps-form__textarea'),
-  stepFormPanelClass: 'multisteps-form__panel',
-  stepFormPanels: document.querySelectorAll('.multisteps-form__panel'),
-  stepPrevBtnClass: 'js-btn-prev',
-  stepNextBtnClass: 'js-btn-next' };
+// const DOMstrings = {
+//   stepsBtnClass: 'multisteps-form__progress-btn',
+//   stepsBtns: document.querySelectorAll(`.multisteps-form__progress-btn`),
+//   stepsBar: document.querySelector('.multisteps-form__progress'),
+//   stepsForm: document.querySelector('.CensusForm'),
+//   stepsFormTextareas: document.querySelectorAll('.multisteps-form__textarea'),
+//   stepFormPanelClass: 'multisteps-form__panel',
+//   stepFormPanels: document.querySelectorAll('.multisteps-form__panel'),
+//   stepPrevBtnClass: 'js-btn-prev',
+//   stepNextBtnClass: 'js-btn-next' };
 
-  function test(){
-  lName = document.querySelector("#lName");
-  fName = document.querySelector("#fName");
-
-  console.log('1: '+lName.value+' 2: '+fName.value);
-  }
-  
   // const removeClasses = (elemSet, className) => {
   
   //   elemSet.forEach(elem => {
