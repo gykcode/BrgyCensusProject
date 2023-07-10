@@ -5,7 +5,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from .forms import CensusForm
-from .models import CensusFormModel
 from django.views import View
 from django.http import JsonResponse
 
@@ -33,6 +32,17 @@ def create_forms(request):
             first_name = form.cleaned_data['first_name']
             address = form.cleaned_data['address']
 
+            date_1 = form.cleaned_data['date_1']
+            time_begin_1 = form.cleaned_data['time_begin_1']
+            time_ended_1 = form.cleaned_data['time_ended_1']
+
+            number_of_visit = form.cleaned_data['number_of_visit']
+            result_of_final_visit = form.cleaned_data['result_of_final_visit']
+            number_of_household_member = form.cleaned_data['number_of_household_member']
+            number_male = form.cleaned_data['number_male']
+            number_female = form.cleaned_data['number_female']
+            enumerator_code = form.cleaned_data['enumerator_code']
+            mode_of_data_collection = form.cleaned_data['mode_of_data_collection']
             #saving the input fields into the model
             form.save()
 
@@ -43,6 +53,10 @@ def create_forms(request):
         form = CensusForm()
 
     return render(request, 'home/forms.html', {'form': form})
+
+
+
+
 
 @login_required(login_url="/login/")
 def pages(request):
