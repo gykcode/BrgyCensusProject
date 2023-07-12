@@ -6,6 +6,7 @@ class CensusForm(forms.ModelForm):
     class Meta:
         model = CensusFormModel
         fields = [
+            #3A
             'enumeration_area_number',
             'building_serial', 
             'housing_unit_serial_number', 
@@ -25,13 +26,20 @@ class CensusForm(forms.ModelForm):
             'enumerator_code',
             'mode_of_data_collection',
             
-            'appointment_date_time_1',
-            'appointment_date_time_2',
-            'appointment_date_time_3',
+            'appointment_date_time_1','appointment_date_time_2','appointment_date_time_3',
+            # 3B
+            'residing_fullname_1', 
+            'relationship_to_head_1', 
+            'gender_1', 
+            'date_born_1', 
+            'age_1', 
+            'birth_registered_1', 
+            'copy_birthcert_1', 
+            'marital_status_1'
         ]  # Or specify the specific fields you want to include
 
         widgets= {
-            
+            #3A
             'enumeration_area_number': forms.TextInput(attrs={'class': 'form-control col-3 inputBorder '}),
             'building_serial': forms.TextInput(attrs={'class': 'form-control col-3 inputBorder '}),
             'housing_unit_serial_number': forms.TextInput(attrs={'class': 'form-control col-3 inputBorder '}),
@@ -55,5 +63,14 @@ class CensusForm(forms.ModelForm):
             'mode_of_data_collection': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 needVal'}),
 
             'appointment_date_time_1' : forms.DateTimeInput(attrs={'type': 'datetime-local', 'class': 'form-control col-7 inputBorder mt-1 mr-1 mb-2'}),
+            #3B
+            'residing_fullname_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+            'relationship_to_head_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 needVal'}),
+            'gender_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 needVal'}),
+            'date_born_1' : forms.DateTimeInput(attrs={'type': 'datetime-local', 'class': 'form-control col-12 inputBorder mt-1 mr-1 mb-2'}),
+            'age_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder mt-1 '}),
+            'birth_registered_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 needVal'}),
+            'copy_birthcert_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 needVal'}),
+            'marital_status_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 needVal'}),
         }
        

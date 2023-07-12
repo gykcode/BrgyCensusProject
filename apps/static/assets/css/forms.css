@@ -198,6 +198,41 @@ opacity: 0.8;
   overflow: hidden;
 }
 
+.boxGridChildOnlyBot {
+  padding: 10px;
+  border: 2px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutLeft {
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutTop {
+  padding: 10px;
+  border: 2px solid black;
+  border-top: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutTopLeft {
+  padding: 10px;
+  border: 2px solid black;
+  border-top: none;
+  border-left: none;
+  color: black;
+  overflow: hidden;
+}
+
 .titleSpan{
   text-decoration: underline;
 }

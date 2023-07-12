@@ -18,7 +18,7 @@ function showTab(n) {
   fixStepIndicator(n);
   
   // Update the Next button based on the current tab
-  updateNextButton(n);
+  updateNextButton(n, x.length);
 }
 
 function nextPrev(n) {
@@ -81,11 +81,11 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
-function updateNextButton(n) {
+function updateNextButton(n, totalSteps) {
   var nextBtn = document.getElementById("nextBtn");
   
   // Update the Next button based on the current tab
-  if (n == (x.length - 1)) {
+  if (n == (totalSteps - 1)) {
     nextBtn.innerHTML = "Submit";
   } else {
     nextBtn.innerHTML = "Next";
