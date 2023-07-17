@@ -29,8 +29,8 @@ GENDER_CHOICES = [
         ]
 
 CLOSED_CHOICES = [
-            ('1', 'YES'),
-            ('2', 'NO'),
+            ('Yes', '1'),
+            ('No', '2'),
         ]
 
 MARITAL_STATUS_CHOICES = [
@@ -40,6 +40,21 @@ MARITAL_STATUS_CHOICES = [
             ('4', 'WIDOWED'),
             ('5', 'DIVORCED/ SEPARATED/ ANNULLED'),
         ]
+PERSON_NOT_YET_LISTED_CHOICES = [
+            ('1', 'Yes, add to the list'),
+            ('2', 'None'),
+        ]
+ADDITIONAL_BOOKLET_CHOICES = [
+            ('1', 'Yes, use additional booklet'),
+            ('2', 'None'),
+        ]
+HEALTH_PROBLEM_CHOICES = [
+            ('1', '1'),
+            ('2', '2'),
+            ('3', '3'),
+            ('4', '4'),
+        ]
+
 
 class CensusFormModel(models.Model):
     #3A
@@ -74,8 +89,6 @@ class CensusFormModel(models.Model):
     appointment_date_time_2 = models.DateTimeField( null=True, blank=True )
     appointment_date_time_3 = models.DateTimeField( null=True, blank=True )
 
-
-
     #summary of visit
     number_of_visit = models.IntegerField(null=True, blank=True)
     result_of_final_visit = models.IntegerField(null=True, blank=True)
@@ -95,5 +108,23 @@ class CensusFormModel(models.Model):
     birth_registered_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
     copy_birthcert_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
     marital_status_1 = models.CharField(max_length=4, choices=MARITAL_STATUS_CHOICES, default='1')
+
+    not_yet_listed = models.CharField(max_length=4, choices=PERSON_NOT_YET_LISTED_CHOICES, blank=True, default='')
+    additional_booklet = models.CharField(max_length=4, choices=ADDITIONAL_BOOKLET_CHOICES, blank=True, default='')
+
+
+    #3C
+    religion_1 = models.CharField(max_length=200, null=True, blank=True)
+    citizen_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
+    other_country_1 = models.CharField(max_length=200, null=True, blank=True)
+    ethnicity_1 = models.CharField(max_length=200, null=True, blank=True)
+    health_problem_a_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+    health_problem_b_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+    health_problem_c_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+    health_problem_d_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+    health_problem_e_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+    health_problem_f_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+
+
    
     

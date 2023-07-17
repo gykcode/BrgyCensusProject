@@ -21,7 +21,7 @@ function showTab(n) {
     document.getElementById("submitBtn").style.display = "none";
   }
 
-  fixStepIndicator(n);
+  fixStepIndicator(currentTab);
 }
 
 function nextPrev(n) {
@@ -53,10 +53,12 @@ function fixStepIndicator(n) {
   var i, x = document.getElementsByClassName("stepIndicator");
 
   for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
+    if (i <= n) {
+      x[i].classList.add("active");
+    } else {
+      x[i].classList.remove("active");
+    }
   }
-
-  x[n].className += " active";
 }
 
 function handleResultChange() {

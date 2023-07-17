@@ -35,7 +35,20 @@ class CensusForm(forms.ModelForm):
             'age_1', 
             'birth_registered_1', 
             'copy_birthcert_1', 
-            'marital_status_1'
+            'marital_status_1',
+            'not_yet_listed',
+            'additional_booklet',
+            #3C
+            'religion_1', 
+            'citizen_1', 
+            'other_country_1', 
+            'ethnicity_1', 
+            'health_problem_a_1', 
+            'health_problem_b_1', 
+            'health_problem_c_1', 
+            'health_problem_d_1', 
+            'health_problem_e_1', 
+            'health_problem_f_1', 
         ]  # Or specify the specific fields you want to include
 
         widgets= {
@@ -60,17 +73,32 @@ class CensusForm(forms.ModelForm):
             'number_male': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder mt-1 '}),
             'number_female': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder mt-1 '}),
             'enumerator_code': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder mt-1 '}),
-            'mode_of_data_collection': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 needVal'}),
+            'mode_of_data_collection': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1'}),
 
             'appointment_date_time_1' : forms.DateTimeInput(attrs={'type': 'datetime-local', 'class': 'form-control col-7 inputBorder mt-1 mr-1 mb-2'}),
+           
             #3B
             'residing_fullname_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
-            'relationship_to_head_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 needVal'}),
-            'gender_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 needVal'}),
+            'relationship_to_head_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1'}),
+            'gender_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1'}),
             'date_born_1' : forms.DateTimeInput(attrs={'type': 'datetime-local', 'class': 'form-control col-12 inputBorder mt-1 mr-1 mb-2'}),
             'age_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder mt-1 '}),
-            'birth_registered_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 needVal'}),
-            'copy_birthcert_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 needVal'}),
-            'marital_status_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 needVal'}),
+            'birth_registered_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1'}),
+            'copy_birthcert_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1'}),
+            'marital_status_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1'}),
+            'not_yet_listed': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1'}),
+            'additional_booklet': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1'}),
+
+            #3C
+            'religion_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}), 
+            'citizen_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 '}),
+            'other_country_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}), 
+            'ethnicity_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),  
+            'health_problem_a_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder '}), 
+            'health_problem_b_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder '}), 
+            'health_problem_c_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder '}), 
+            'health_problem_d_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'health_problem_e_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'health_problem_f_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
         }
        

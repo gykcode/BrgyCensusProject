@@ -61,14 +61,29 @@ def create_forms(request):
             mode_of_data_collection = form.cleaned_data['mode_of_data_collection']
 
             # 3B
-            # residing_fullname_1 = form.cleaned_data['residing_fullname_1']
-            # relationship_to_head_1 = form.cleaned_data['relationship_to_head_1']
-            # gender_1 = form.cleaned_data['gender_1']
-            # date_born_1 = form.cleaned_data['date_born_1']
-            # age_1 = form.cleaned_data['age_1']
-            # birth_registered_1 = form.cleaned_data['birth_registered_1']
-            # copy_birthcert_1 = form.cleaned_data['copy_birthcert_1']
-            # marital_status_1 = form.cleaned_data['marital_status_1']
+            residing_fullname_1 = form.cleaned_data['residing_fullname_1']
+            relationship_to_head_1 = form.cleaned_data['relationship_to_head_1']
+            gender_1 = form.cleaned_data['gender_1']
+            date_born_1 = form.cleaned_data['date_born_1']
+            age_1 = form.cleaned_data['age_1']
+            birth_registered_1 = form.cleaned_data['birth_registered_1']
+            copy_birthcert_1 = form.cleaned_data['copy_birthcert_1']
+            marital_status_1 = form.cleaned_data['marital_status_1']
+            not_yet_listed = form.cleaned_data['not_yet_listed']
+            additional_booklet = form.cleaned_data['additional_booklet']
+
+            #3C
+            religion_1 = form.cleaned_data['religion_1']
+            citizen_1 = form.cleaned_data['citizen_1']
+            other_country_1 = form.cleaned_data['other_country_1']
+            ethnicity_1 = form.cleaned_data['ethnicity_1']
+            health_problem_a_1 = form.cleaned_data['health_problem_a_1']
+            health_problem_b_1 = form.cleaned_data['health_problem_b_1']
+            health_problem_c_1 = form.cleaned_data['health_problem_c_1']
+            health_problem_d_1 = form.cleaned_data['health_problem_d_1']
+            health_problem_e_1 = form.cleaned_data['health_problem_e_1']
+            health_problem_f_1 = form.cleaned_data['health_problem_f_1']
+            
 
 
 
