@@ -49,6 +49,11 @@
 											<span class="stepIndicator">Step 1: 3A</span>
 											<span class="stepIndicator">Step 2: 3B</span>
 											<span class="stepIndicator">Step 3: 3C</span>
+											<span class="stepIndicator">Step 4: 3D</span>
+											<span class="stepIndicator">Step 5: 3E</span>
+											<span class="stepIndicator">Step 6: 3F</span>
+											<span class="stepIndicator">Step 7: 3G</span>
+											<span class="stepIndicator">Step 8: 3H</span>
 										</div>
 										<!-- end step indicators -->
 
@@ -480,12 +485,177 @@
 
 												<div class="row col-12 ml-1 boxGrid">
 													<h3 class="fw-bold">Remarks</h3>
-
+													{{form.remarks_3C}}
 												</div>
 
 											</div>
 										</div>
-									
+
+										<!-- step four -->
+										<div class="step">
+											<div class="boxGrid form-row mb-2">
+												<div class="row justify-content-left col-12">
+													<div class="col-auto"><h4 class="fw-bold">3D</h4></div>
+												</div>
+												<div class="row justify-content-center col-12 titleEdit">POPULATION CENSUS QUESTIONS</div>
+
+												<div class=" row col-12 ml-1">
+													<div class=" boxGridChildWithoutRight col-3">
+														<h5 class="fw-bold">GENERAL INSTRUCTION</h5>
+													</div>
+													<div class="boxGridChildWithoutLeft col-9">
+														<div class="row col-12 fw-bold">1. WRITE THE DETAILED ANSWER/DESCRIPTION ON THE LINE.</div>
+														<div class="row col-12 fw-bold">2. WRITE THE NUMBER OR CODE CORRESPONDING TO THE ANSWER IN THE BOXES.</div>
+														<div class="row col-12 fw-bold">3. REFER TO THE CODE BOOK FOR CODES IN ITEMS P14, P15, P19.</div>
+													</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class=" boxGridChildWithoutTopBottom col-7 justify-content-center">
+														<div class="fw-bold">FOR ALL PERSONS 5 YEARS OLD AND OVER</div>
+													</div>
+
+													<div class=" boxGridChildOnlyRight col-4 justify-content-center">
+														<div class="fw-bold">FOR ALL PERSONS 5 TO 28 YEARS OLD</div>
+													</div>
+
+													<div class=" boxGridChildOnlyRight col-1 justify-content-center">
+														<div class="fw-bold">FOR ALL PERSONS 15 YEARS OLD AND OVER</div>
+													</div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-2 boxGrid fw-bold">Residence of Mother at the Time of Birth of the Household Member</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Residence Five (5) Years Ago</div>
+													<div class="col-1 boxGridChildWithoutLeft fw-bold">Literacy</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Highest Grade/ Year Completed</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">School Attendance</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Place of School</div>
+													<div class="col-1 boxGridChildWithoutLeft fw-bold">Overseas Worker</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxTitle">P14</div>
+													<div class="col-2 boxTitle">P15</div>
+													<div class="col-1 boxTitle">P16</div>
+													<div class="col-2 boxTitle">P17</div>
+													<div class="col-2 boxTitle">P18</div>
+													<div class="col-2 boxTitle">P19</div>
+													<div class="col-1 boxTitle">P20</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxGrid">In what province and city/municipality did ___'s mother reside at the time of ___'s birth?</div>
+													<div class="col-2 boxGridChildWithoutLeft">In what province and city/municipality did ___ reside on May 1, 2015?</div>
+													<div class="col-1 boxGridChildWithoutLeft">Can ___ read and write a simple message in any language or dialect?</div>
+													<div class="col-2 boxGridChildWithoutLeft">What is the highest grade/ year complete by ___?</div>
+													<div class="col-2 boxGridChildWithoutLeft">Did ___ attend school at anytime from June 2019 to May 2020?<br><br> IF CODE "2", GO TO ITEM P20</div>
+													<div class="col-2 boxGridChildWithoutLeft">In what province and city/ municipality did ___ attend school?</div>
+													<div class="col-1 boxGridChildWithoutLeft">Is ___ an overseas worker?</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxGridChildWithoutTop">{{form.province_time_birth_1}}<br>{{form.municipality_time_birth_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.province_reside_1}}<br>{{form.municipality_reside_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.read_write_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.highest_year_completed_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.attend_school_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.province_school_attended_1}}<br>{{form.municipality_school_attended_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.overseas_worker_1}}</div>
+													
+												</div>
+
+											
+												<div class="row col-12 no-gutters">
+													<button type="button" class="col-2 mb-2 mt-2">Add Member</button>
+												</div>
+											</div>
+										</div>
+
+										<!-- step five -->
+										<div class="step">
+											<div class="boxGrid form-row mb-2">
+												<div class="row justify-content-left col-12">
+													<div class="col-auto"><h4 class="fw-bold">3E</h4></div>
+												</div>
+												<div class="row justify-content-center col-12 titleEdit">POPULATION CENSUS QUESTIONS</div>
+
+												<div class=" row col-12 ml-1">
+													<div class=" boxGridChildWithoutRight col-3">
+														<h5 class="fw-bold">GENERAL INSTRUCTION</h5>
+													</div>
+													<div class="boxGridChildWithoutLeft col-9">
+														<div class="row col-12 fw-bold">1. WRITE THE DETAILED ANSWER/DESCRIPTION ON THE LINE.</div>
+														<div class="row col-12 fw-bold">2. WRITE THE NUMBER OR CODE CORRESPONDING TO THE ANSWER IN THE BOXES.</div>
+														<div class="row col-12 fw-bold">3. REFER TO THE CODE BOOK FOR CODES IN ITEM P24.</div>
+													</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class=" boxGridChildWithoutTopBottom col-7 justify-content-center">
+														<div class="fw-bold">FOR ALL PERSONS 15 YEARS OLD AND OVER</div>
+													</div>
+
+													<div class=" boxGridChildOnlyRight col-5 justify-content-center">
+														<div class="fw-bold">FOR ALL FEMALE PERSONS 15 TO 49 YEARS OLD</div>
+													</div>
+
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-2 boxGrid fw-bold">Usual Activity/ Occupation</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Kind of Business or Industry</div>
+													<div class="col-1 boxGridChildWithoutLeft fw-bold">Class of Worker</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Place of Work</div>
+													<div class="col-5 boxGridChildWithoutLeft fw-bold">Fertility Indicators</div>
+												
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxTitle">P21</div>
+													<div class="col-2 boxTitle">P22</div>
+													<div class="col-1 boxTitle">P23</div>
+													<div class="col-2 boxTitle">P24</div>
+													<div class="col-1 boxTitle">P25</div>
+													<div class="col-1 boxTitle">P26</div>
+													<div class="col-1 boxTitle">P27</div>
+													<div class="col-2 boxTitle">P28</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxGrid">During the past 12 months, what was ___'s usual activity/ occupation?</div>
+													<div class="col-2 boxGridChildWithoutLeft">In what kind of business of industry did ___ work during the past 12 months?</div>
+													<div class="col-1 boxGridChildWithoutLeft">What kind of worker ___ is?</div>
+													<div class="col-2 boxGridChildWithoutLeft">In what province and city/ municipality did ___ work during the past 12 months?</div>
+													<div class="col-1 boxGridChildWithoutLeft">How many children have been born alive to ___?<br><br> If none, write '00' amd go to item P28</div>
+													<div class="col-1 boxGridChildWithoutLeft">From among the children who have been born alive to ___, how many are still living?</div>
+													<div class="col-1 boxGridChildWithoutLeft">From among the children who have been born alive to ___, how many were born alive from May 1, 2019 to April 30,2020</div>
+													<div class="col-2 boxGridChildWithoutLeft">What was ___'s age at first marriage?</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxGridChildWithoutTop">{{form.usual_activity_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.business_worked_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.kind_of_worker_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.province_work_past12months_1}}<br>{{form.municipality_work_past12months_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.children_borned_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.children_still_living_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.children_alive_specificdate_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.age_firstmarriage_1}}</div>
+												</div>
+
+											
+												<div class="row col-12 no-gutters">
+													<button type="button" class="col-2 mb-2 mt-2">Add Member</button>
+												</div>
+
+												<div class="row col-12 ml-1 boxGrid">
+													<h3 class="fw-bold">Remarks</h3><br>
+													{{form.remarks_3E}}
+												</div>
+											</div>
+										</div>
+										
 										<!-- start previous / next buttons -->
 										<div class="form-footer d-flex justify-content-between">
 											<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>

@@ -124,7 +124,29 @@ class CensusFormModel(models.Model):
     health_problem_d_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
     health_problem_e_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
     health_problem_f_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+    remarks_3C = models.CharField(max_length=200, null=True, blank=True)
 
+    #3D
+    province_time_birth_1 = models.CharField(max_length=200, null=True, blank=True)
+    municipality_time_birth_1 = models.CharField(max_length=200, null=True, blank=True)
+    province_reside_1 = models.CharField(max_length=200, null=True, blank=True)
+    municipality_reside_1 = models.CharField(max_length=200, null=True, blank=True)
+    read_write_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
+    highest_year_completed_1 = models.CharField(max_length=200, null=True, blank=True)
+    attend_school_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
+    province_school_attended_1 = models.CharField(max_length=200, null=True, blank=True)
+    municipality_school_attended_1 = models.CharField(max_length=200, null=True, blank=True)
+    overseas_worker_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
 
-   
+    #3E
+    usual_activity_1 = models.CharField(max_length=200, null=True, blank=True)
+    business_worked_1 = models.CharField(max_length=200, null=True, blank=True)
+    kind_of_worker_1 = models.CharField(max_length=200, null=True, blank=True)
+    province_work_past12months_1 = models.CharField(max_length=200, null=True, blank=True)
+    municipality_work_past12months_1 = models.CharField(max_length=200, null=True, blank=True)
+    children_borned_1 = models.IntegerField(null=True, blank=True)
+    children_still_living_1 = models.IntegerField(null=True, blank=True)
+    children_alive_specificdate_1 = models.IntegerField(null=True, blank=True)
+    age_firstmarriage_1 = models.IntegerField(null=True, blank=True)
+    remarks_3E = models.CharField(max_length=200, null=True, blank=True)
     

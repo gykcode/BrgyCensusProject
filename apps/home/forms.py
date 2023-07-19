@@ -25,8 +25,8 @@ class CensusForm(forms.ModelForm):
             'number_female',
             'enumerator_code',
             'mode_of_data_collection',
-            
             'appointment_date_time_1','appointment_date_time_2','appointment_date_time_3',
+
             # 3B
             'residing_fullname_1', 
             'relationship_to_head_1', 
@@ -38,6 +38,7 @@ class CensusForm(forms.ModelForm):
             'marital_status_1',
             'not_yet_listed',
             'additional_booklet',
+
             #3C
             'religion_1', 
             'citizen_1', 
@@ -48,7 +49,32 @@ class CensusForm(forms.ModelForm):
             'health_problem_c_1', 
             'health_problem_d_1', 
             'health_problem_e_1', 
-            'health_problem_f_1', 
+            'health_problem_f_1',
+            'remarks_3C',
+
+            #3D
+            'province_time_birth_1',
+            'municipality_time_birth_1', 
+            'province_reside_1', 
+            'municipality_reside_1', 
+            'read_write_1', 
+            'highest_year_completed_1', 
+            'attend_school_1', 
+            'province_school_attended_1',
+            'municipality_school_attended_1',
+            'overseas_worker_1', 
+
+            #3E
+            'usual_activity_1',
+            'business_worked_1',
+            'kind_of_worker_1',
+            'province_work_past12months_1',
+            'municipality_work_past12months_1',
+            'children_borned_1',
+            'children_still_living_1',
+            'children_alive_specificdate_1',
+            'age_firstmarriage_1',
+            'remarks_3E',
         ]  # Or specify the specific fields you want to include
 
         widgets= {
@@ -74,7 +100,6 @@ class CensusForm(forms.ModelForm):
             'number_female': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder mt-1 '}),
             'enumerator_code': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder mt-1 '}),
             'mode_of_data_collection': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1'}),
-
             'appointment_date_time_1' : forms.DateTimeInput(attrs={'type': 'datetime-local', 'class': 'form-control col-7 inputBorder mt-1 mr-1 mb-2'}),
            
             #3B
@@ -91,14 +116,39 @@ class CensusForm(forms.ModelForm):
 
             #3C
             'religion_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}), 
-            'citizen_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 '}),
-            'other_country_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}), 
-            'ethnicity_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),  
+            'citizen_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1', 'onchange': 'handle3CChange()'}),
+            'other_country_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder', 'readonly': 'readonly'}), 
+            'ethnicity_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder', 'readonly': 'readonly'}),
             'health_problem_a_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder '}), 
             'health_problem_b_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder '}), 
             'health_problem_c_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder '}), 
             'health_problem_d_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
             'health_problem_e_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
             'health_problem_f_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'remarks_3C': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+
+            #3D
+            'province_time_birth_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'placeholder': 'province'}), 
+            'municipality_time_birth_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'placeholder': 'municipality'}), 
+            'province_reside_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'placeholder': 'province'}), 
+            'municipality_reside_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'placeholder': 'municipality'}), 
+            'read_write_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder '}), 
+            'highest_year_completed_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}), 
+            'attend_school_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder ', 'onchange': 'handle3DChange()'}), 
+            'province_school_attended_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'placeholder': 'province', 'readonly': 'readonly'}),
+            'municipality_school_attended_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'placeholder': 'municipality', 'readonly': 'readonly'}),
+            'overseas_worker_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder '}), 
+
+            #3E
+            'usual_activity_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+            'business_worked_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+            'kind_of_worker_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+            'province_work_past12months_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ','placeholder': 'province',}),
+            'municipality_work_past12months_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'placeholder': 'municipality'}),
+            'children_borned_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+            'children_still_living_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+            'children_alive_specificdate_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+            'age_firstmarriage_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+            'remarks_3E': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
         }
        
