@@ -23,6 +23,7 @@ def create_forms(request):
         # print(form,'kjhkjhjgjhgfghgfhhjkjhkjhjhj')
         if form.is_valid():
             # Process the form data
+            # 3A
             enumeration_area_number = form.cleaned_data['enumeration_area_number']
             building_serial = form.cleaned_data['building_serial']
             housing_unit_serial_number = form.cleaned_data['housing_unit_serial_number']
@@ -32,9 +33,24 @@ def create_forms(request):
             first_name = form.cleaned_data['first_name']
             address = form.cleaned_data['address']
 
-            date_1 = form.cleaned_data['date_1']
-            time_begin_1 = form.cleaned_data['time_begin_1']
-            time_ended_1 = form.cleaned_data['time_ended_1']
+            date_time_created_1 = form.cleaned_data['date_time_created_1']
+            date_time_ended_1 = form.cleaned_data['date_time_ended_1']
+            result_1 = form.cleaned_data['result_1']
+            result_description_1 = form.cleaned_data['result_description_1']
+
+            date_time_created_2 = form.cleaned_data['date_time_created_2']
+            date_time_ended_2 = form.cleaned_data['date_time_ended_2']
+            result_2 = form.cleaned_data['result_2']
+            result_description_2 = form.cleaned_data['result_description_2']
+
+            date_time_created_3 = form.cleaned_data['date_time_created_3']
+            date_time_ended_3 = form.cleaned_data['date_time_ended_3']
+            result_3 = form.cleaned_data['result_3']
+            result_description_3 = form.cleaned_data['result_description_3']
+
+            appointment_date_time_1 = form.cleaned_data['appointment_date_time_1']
+            appointment_date_time_2 = form.cleaned_data['appointment_date_time_2']
+            appointment_date_time_3 = form.cleaned_data['appointment_date_time_3']
 
             number_of_visit = form.cleaned_data['number_of_visit']
             result_of_final_visit = form.cleaned_data['result_of_final_visit']
@@ -43,6 +59,58 @@ def create_forms(request):
             number_female = form.cleaned_data['number_female']
             enumerator_code = form.cleaned_data['enumerator_code']
             mode_of_data_collection = form.cleaned_data['mode_of_data_collection']
+
+            # 3B
+            residing_fullname_1 = form.cleaned_data['residing_fullname_1']
+            relationship_to_head_1 = form.cleaned_data['relationship_to_head_1']
+            gender_1 = form.cleaned_data['gender_1']
+            date_born_1 = form.cleaned_data['date_born_1']
+            age_1 = form.cleaned_data['age_1']
+            birth_registered_1 = form.cleaned_data['birth_registered_1']
+            copy_birthcert_1 = form.cleaned_data['copy_birthcert_1']
+            marital_status_1 = form.cleaned_data['marital_status_1']
+            not_yet_listed = form.cleaned_data['not_yet_listed']
+            additional_booklet = form.cleaned_data['additional_booklet']
+
+            #3C
+            religion_1 = form.cleaned_data['religion_1']
+            citizen_1 = form.cleaned_data['citizen_1']
+            other_country_1 = form.cleaned_data['other_country_1']
+            ethnicity_1 = form.cleaned_data['ethnicity_1']
+            health_problem_a_1 = form.cleaned_data['health_problem_a_1']
+            health_problem_b_1 = form.cleaned_data['health_problem_b_1']
+            health_problem_c_1 = form.cleaned_data['health_problem_c_1']
+            health_problem_d_1 = form.cleaned_data['health_problem_d_1']
+            health_problem_e_1 = form.cleaned_data['health_problem_e_1']
+            health_problem_f_1 = form.cleaned_data['health_problem_f_1']
+            remarks_3C = form.cleaned_data['remarks_3C']
+
+            #3D
+            province_time_birth_1 = form.cleaned_data['province_time_birth_1']
+            municipality_time_birth_1 = form.cleaned_data['municipality_time_birth_1']
+            province_reside_1 = form.cleaned_data['province_reside_1']
+            municipality_reside_1 = form.cleaned_data['municipality_reside_1']
+            read_write_1 = form.cleaned_data['read_write_1']
+            highest_year_completed_1 = form.cleaned_data['highest_year_completed_1']
+            attend_school_1 = form.cleaned_data['attend_school_1']
+            province_school_attended_1 = form.cleaned_data['province_school_attended_1']
+            municipality_school_attended_1 = form.cleaned_data['municipality_school_attended_1']
+            overseas_worker_1 = form.cleaned_data['overseas_worker_1']
+
+            #3E
+            usual_activity_1 = form.cleaned_data['usual_activity_1']
+            business_worked_1 = form.cleaned_data['business_worked_1']
+            kind_of_worker_1 = form.cleaned_data['kind_of_worker_1']
+            province_work_past12months_1 = form.cleaned_data['province_work_past12months_1']
+            municipality_work_past12months_1 = form.cleaned_data['municipality_work_past12months_1']
+            children_borned_1 = form.cleaned_data['children_borned_1']
+            children_still_living_1 = form.cleaned_data['children_still_living_1']
+            children_alive_specificdate_1 = form.cleaned_data['children_alive_specificdate_1']
+            age_firstmarriage_1 = form.cleaned_data['age_firstmarriage_1']
+            remarks_3E = form.cleaned_data['remarks_3E']
+
+
+
             #saving the input fields into the model
             form.save()
 

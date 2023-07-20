@@ -40,307 +40,632 @@
 							<div class="card-title">Form Elements</div>
 						</div>
 						<div class="card-body ">
-							<div class="container overflow-hidden background">
-									
-								<!-- <div class="row form_width"> -->
-									<div class="col-12 col-lg-10 m-auto">
-										<form class="CensusFormClass col-auto" id="CensusFormId" method=POST>
-											{% csrf_token %}
-											<!-- start step indicators -->
-											<div class="form-header d-flex mb-4">
-												<span class="stepIndicator">Step 1: 3A</span>
-												<span class="stepIndicator">Step 2: 3B</span>
-												<span class="stepIndicator">Step 3: 3C</span>
-											</div>
-											<!-- end step indicators -->
+							<div class=" overflow-hidden background">
+								<div class="m-auto">
+									<form class="CensusFormClass col-auto" id="CensusFormId" method=POST>
+										{% csrf_token %}
+										<!-- start step indicators -->
+										<div class="form-header d-flex justify-content-between mb-4">
+											<span class="stepIndicator">Step 1: 3A</span>
+											<span class="stepIndicator">Step 2: 3B</span>
+											<span class="stepIndicator">Step 3: 3C</span>
+											<span class="stepIndicator">Step 4: 3D</span>
+											<span class="stepIndicator">Step 5: 3E</span>
+											<span class="stepIndicator">Step 6: 3F</span>
+											<span class="stepIndicator">Step 7: 3G</span>
+											<span class="stepIndicator">Step 8: 3H</span>
+										</div>
+										<!-- end step indicators -->
 
-											<!-- step one -->
-											<div class="step ">
-												<div class="boxGrid form-row mb-2">
-													<div class="row justify-content-end col-12">
-														<div class="col-auto"><h4 class="fw-bold">3A</h4></div>
-													</div>
-													<div class="row justify-content-center col-12">
-														<img src="/static/assets/img/PSA_Logo.png" class="img-fluid PSASize" alt="Responsive image">
-													</div>
+										<!-- step one -->
+										<div class="step ">
+											<div class="boxGrid form-row mb-2">
+												<div class="row justify-content-end col-12">
+													<div class="col-auto"><h4 class="fw-bold">3A</h4></div>
 												</div>
-												
-												<!-- ----------------------------------------GEOGRAPHIC IDENTIFICATION--------------------------------------------- -->
-												<div class="boxGrid form-row mb-2">
-													<div class="row justify-content-center col-12">
-														<div class="col-auto"><h3 class="fw-bold">GEOGRAPHIC IDENTIFICATION</h3></div>
-													</div><br><br>
-													<div class="row col-12 ">
-														<div class="col-6"><h4>PROVINCE: </h4></div>
-														<div class="col-4 fw-bold" id="province">METRO MANILA</div>
-													</div><br><br>
-													<div class="row col-12 ">
-														<div class="col-6"><h4>CITY/MUNICIPALITY: </h4></div>
-														<div class="col-4 fw-bold" id="city_municipality">PASIG CITY</div>
-													</div><br><br>
-													<div class="row col-12">
-														<div class="col-6"><h4>BARANGAY: </h4></div>
-														<div class="col-4 fw-bold" id="barangay">MANGGAHAN</div>
-													</div><br><br>
-													<div class="row col-12 pads">
-														<div class="col-6"><h4>ENUMERATION AREA NUMBER: </h4></div>
-														{{ form.enumeration_area_number }}
-													</div><br><br>
-													<div class="row col-12 pads">
-														<div class="col-6"><h4>BUILDING SERIAL: </h4></div>
-														{{ form.building_serial }}
-													</div><br><br>
-													<div class="row col-12 pads">
-														<div class="col-6"><h4>HOUSING UNIT SERIAL NUMBER: </h4></div>
-														{{ form.housing_unit_serial_number }}
-													</div><br><br>
-													<div class="row col-12 pads">
-														<div class="col-6"><h4>HOUSEHOLD SERIAL NUMBER: </h4></div>
-														{{ form.household_serial_number }}
-													</div><br><br>
-													<div class="row col-12 pads">
-														<div class="col-6"><h4>LINE NUMBER OF THE RESPONDENTS: </h4></div>
-														{{ form.line_number_respondents }}
-													</div>
-													<div class="row col-12 padsWithHolder">
-														<div class="col-4"><h4>NAME OF THE HOUSEHOLD HEAD: </h4></div>
-														{{ form.last_name }}
-														{{ form.first_name }}
-													</div>
-													<div class="row col-12">
-														<div class="col-4"></div>
-														<div class="col-3"><div class="text-center font-weight-bold">LAST NAME</div></div>
-														<div class="col-3 ml-3"><div class="text-center font-weight-bold">FIRST NAME</div></div>
-													</div>
-													<div class="row col-md-12 padsWithHolder">
-														<div class="col-4"><h4>ADDRESS: </h4></div>
-														{{ form.address }}
-													</div>
-													<div class="row col-12">
-														<div class="col-4"></div>
-														<div class="col-8"><div class="text-center font-weight-bold">HOUSE/BUILDING NUMBER AND STREET OR SITIO/PUROK NAME</div></div>
-													</div>
+												<div class="row justify-content-center col-12">
+													<img src="/static/assets/img/PSA_Logo.png" class="img-fluid PSASize" alt="Responsive image">
 												</div>
-												<!-- ---------------------------------------- END OF GEOGRAPHIC IDENTIFICATION --------------------------------------------- -->
-												
-												<!-- ---------------------------------------- INTERVIEW RECORD --------------------------------------------- -->
-												<div class="boxGrid form-row">
-													<div class="row justify-content-center col-12">
-														<div class="col-auto"><h3 class="fw-bold">INTERVIEW RECORD</h3></div>
-													</div>
-													
-													<div class="row col-12 no-gutters">
-														<div class="row boxGridChildLeft col-7 no-gutters">
-															<div class="row col-12 no-gutters">
-																<div class="col-4 boxTitle mr-4 ml-2 font-weight-bold"><div class="align-self-center">VISIT NUMBER</div></div>
-																<div class="col-2 boxTitle mr-1 font-weight-bold"><div class="align-self-center">1</div></div>
-																<div class="col-2 boxTitle mr-1 font-weight-bold"><div class="align-self-center">2</div></div>
-																<div class="col-2 boxTitle mr-1 font-weight-bold"><div class="align-self-center">3</div></div>
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
-																	<div class="visitAlign">DATE<br><span class="text-muted titleFont">MONTH/DAY</span></div>
-																</div>
-																{{ form.date_1 }}
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1 datePick" placeholder="mm/dd">
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1 datePick" placeholder="mm/dd">
-																
-																
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
-																	<div class="visitAlign">TIME BEGIN<br><span class="text-muted titleFont">HOUR:MINUTE</span></div>
-																</div>
-																{{ form.time_begin_1 }}
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1" placeholder="am/pm">
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1" placeholder="am/pm">
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
-																	<div class="visitAlign">TIME ENDED<br><span class="text-muted titleFont">HOUR:MINUTE</span></div>
-																</div>
-																{{ form.time_ended_1 }}
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1" placeholder="am/pm">
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1" placeholder="am/pm">
-															</div>
-															<div class="row col-12 no-gutters mb-1">
-																<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">RESULT OF VISIT</div>
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1">
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1">
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1">
-															</div>
-															<!-- ------------------ CODE FOR THE RESULT OF VISIT ----------------------------- -->
-															<!-- Horizontal line -->
-															<div class="row col-11 no-gutters"><hr></div> 
-															<div class="row col-12 justify-content-center no-gutters">
-																<div class="col-auto"><h3 class="fw-bold">CODE FOR THE RESULT OF VISIT</h3></div>
-															</div>
-															<!-- Horizontal line -->
-															<div class="row col-11 no-gutters"><hr></div>
-															
-															<div class="row col-12 no-gutters">
-																<div class="col-6 d-flex justify-content-center">1. COMPLETED *</div>
-																<div class="col-6 d-flex justify-content-center">4. REFUSED</div>
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-6 d-flex justify-content-center">2. NOT YET COMPLETED<br>(FOR CALLBACK)</div>
-																<div class="col-6 d-flex justify-content-center">
-																	<div class="visitAlign">
-																		5. OTHERS, SPECIFY *<br>
-																		<input type="text" class="form-control col-12 inputBorder mt-1 mr-1">
-																	</div>
-																</div>
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-6 d-flex justify-content-center">3. ENTRIRE HOUSEHOLD IS <br>ABSENT/AWAY DURING THE <br>ENUMERATION PERIOD *</div>
-															</div>
-															<!-- ------------------ APPOINTMENT FOR THE NEXT VISIT ----------------------------- -->
-															<!-- Horizontal line -->
-															<div class="row col-11 no-gutters"><hr></div> 
-															<div class="row col-12 justify-content-center no-gutters">
-																<div class="col-auto"><h3 class="fw-bold">APPOINTMENT FOR THE NEXT VISIT</h3></div>
-															</div>
-															<!-- Horizontal line -->
-															<div class="row col-11 no-gutters"><hr></div>
-															
-															<div class="row col-12 no-gutters">
-																<div class="col-4 boxTitle mr-4 ml-2 font-weight-bold"><div class="align-self-center">VISIT NUMBER</div></div>
-																<div class="col-2 boxTitle mr-1 font-weight-bold"><div class="align-self-center">1</div></div>
-																<div class="col-2 boxTitle mr-1 font-weight-bold"><div class="align-self-center">2</div></div>
-																<div class="col-2 boxTitle mr-1 font-weight-bold"><div class="align-self-center">3</div></div>
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
-																	<div class="visitAlign">DATE<br><span class="text-muted titleFont">MONTH/DAY</span></div>
-																</div>
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1" placeholder="mm/dd">
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1" placeholder="mm/dd">
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1" placeholder="mm/dd">
-
-
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
-																	<div class="visitAlign">TIME<br><span class="text-muted titleFont">HOUR:MINUTE</span></div>
-																</div>
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1" placeholder="am/pm">
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1" placeholder="am/pm">
-																<input type="text" class="form-control col-2 inputBorder mt-1 mr-1" placeholder="am/pm">
-															</div>
-														</div>
-														<!-- ------------------ SUMMARY OF VISIT ----------------------------- -->
-														<div class="row boxGridChildRight col-5 no-gutters p-2">
-															<div class="row col-12 no-gutters custom-row align-items-center">
-																<div class="col-12 boxTitle font-weight-bold">
-																	<div class="align-self-center">SUMMARY OF VISIT</div>
-																</div>
-															</div>
-															
-															<div class="row col-12 no-gutters">
-																<div class="col-8 d-flex align-items-center">NUMBER OF VISIT/S MADE</div>
-																<div class="col-4 d-flex align-items-center">
-																	<!-- <input type="text" class="form-control col-12 inputBorder mt-1"> -->
-																	{{ form.number_of_visit }}
-																</div>
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-8 d-flex align-items-center">RESULT OF FINAL VISIT*</div>
-																<div class="col-4 d-flex align-items-center">
-																	<!-- <input type="text" class="form-control col-12 inputBorder mt-1"> -->
-																	{{ form.result_of_final_visit }}
-																</div>
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-8 d-flex align-items-center">NUMBER OF HOUSEHOLD MEMBER</div>
-																<div class="col-4 d-flex align-items-center">
-																	<!-- <input type="text" class="form-control col-12 inputBorder mt-1"> -->
-																	{{ form.number_of_household_member }}
-																</div>
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-8 d-flex align-items-center">NUMBER OF MALE</div>
-																<div class="col-4 d-flex align-items-center">
-																	<!-- <input type="text" class="form-control col-12 inputBorder mt-1"> -->
-																	{{ form.number_male }}
-																</div>
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-8 d-flex align-items-center">NUMBER OF FEMALE</div>
-																<div class="col-4 d-flex align-items-center">
-																	<!-- <input type="text" class="form-control col-12 inputBorder mt-1"> -->
-																	{{ form.number_female }}
-																</div>
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-8 d-flex align-items-center">ENUMERATOR'S CODE</div>
-																<div class="col-4 d-flex align-items-center">
-																	<!-- <input type="text" class="form-control col-12 inputBorder mt-1"> -->
-																	{{ form.enumerator_code }}
-																</div>
-															</div>
-															<div class="row col-12 no-gutters">
-																<div class="col-8 d-flex align-items-center">MODE OF DATA COLLECTION</div>
-																<div class="col-4 d-flex align-items-center">
-																	<!-- <input type="text" class="form-control col-12 inputBorder mt-1"> -->
-																	{{ form.mode_of_data_collection }}
-																</div>
-															</div>
-															<div class="row col-12 no-gutters titleFont">
-																<div class="col-10">1. PAPER AND PENCIL PERSONAL INTERVIEW </div>
-																<div class="col-2 text-left font-weight-bold">(PAPI)</div>
-															</div>
-															<div class="row col-12 no-gutters titleFont">
-																<div class="col-10">2. SELF-ADMINISTERED QUESTIONNAIRE </div>
-																<div class="col-2 text-left font-weight-bold">(SAQ)</div>
-															</div>
-															<div class="row col-12 no-gutters titleFont">
-																<div class="col-10">3. COMPUTER-ASSISTED PERSONAL INTERVIEW </div>
-																<div class="col-2 text-left font-weight-bold">(CAPI)</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											<!-- ---------------------------------------- END OF INTERVIEW RECORD --------------------------------------------- -->
-											</div>
-										
-											<!-- step two -->
-											<!-- <div class="step">
-												<p class="text-center mb-4">Your presence on the social network</p>
-												<div class="mb-3">
-													<input type="text" placeholder="Linked In" oninput="this.className = ''" name="linkedin">
-												</div>
-												<div class="mb-3">
-													<input type="text" placeholder="Twitter" oninput="this.className = ''" name="twitter">
-												</div>
-												<div class="mb-3">
-													<input type="text" placeholder="Facebook" oninput="this.className = ''" name="facebook">
-												</div>
-											</div> -->
-										
-											<!-- step three -->
-											<!-- <div class="step">
-												<p class="text-center mb-4">We will never sell it</p>
-												<div class="mb-3">
-													<input type="text" placeholder="Full name" oninput="this.className = ''" name="fullname">
-												</div>
-												<div class="mb-3">
-													<input type="text" placeholder="Mobile" oninput="this.className = ''" name="mobile">
-												</div>
-												<div class="mb-3">
-													<input type="text" placeholder="Address" oninput="this.className = ''" name="address">
-												</div>
-											</div> -->
-										
-											<!-- start previous / next buttons -->
-											<div class="form-footer d-flex justify-content-between">
-												<!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-												<button type="button" class="btn btn-md nextBtn" id="nextBtn" onclick="nextPrev(1)">Next</button> -->
-												<button type="submit">submit</button>
 											</div>
 											
-										</form>
-									</div>
-								<!-- </div> -->
+											<!-- ----------------------------------------GEOGRAPHIC IDENTIFICATION--------------------------------------------- -->
+											<div class="boxGrid form-row mb-2">
+												<div class="row justify-content-center col-12">
+													<div class="col-auto"><h3 class="fw-bold">GEOGRAPHIC IDENTIFICATION</h3></div>
+												</div><br><br>
+												<div class="row col-12 ">
+													<div class="col-6"><h4>PROVINCE: </h4></div>
+													<div class="col-4 fw-bold" id="province">METRO MANILA</div>
+												</div><br><br>
+												<div class="row col-12 ">
+													<div class="col-6"><h4>CITY/MUNICIPALITY: </h4></div>
+													<div class="col-4 fw-bold" id="city_municipality">PASIG CITY</div>
+												</div><br><br>
+												<div class="row col-12">
+													<div class="col-6"><h4>BARANGAY: </h4></div>
+													<div class="col-4 fw-bold" id="barangay">MANGGAHAN</div>
+												</div><br><br>
+												<div class="row col-12 pads">
+													<div class="col-6"><h4>ENUMERATION AREA NUMBER: </h4></div>
+													{{ form.enumeration_area_number }}
+												</div><br><br>
+												<div class="row col-12 pads">
+													<div class="col-6"><h4>BUILDING SERIAL: </h4></div>
+													{{ form.building_serial }}
+												</div><br><br>
+												<div class="row col-12 pads">
+													<div class="col-6"><h4>HOUSING UNIT SERIAL NUMBER: </h4></div>
+													{{ form.housing_unit_serial_number }}
+												</div><br><br>
+												<div class="row col-12 pads">
+													<div class="col-6"><h4>HOUSEHOLD SERIAL NUMBER: </h4></div>
+													{{ form.household_serial_number }}
+												</div><br><br>
+												<div class="row col-12 pads">
+													<div class="col-6"><h4>LINE NUMBER OF THE RESPONDENTS: </h4></div>
+													{{ form.line_number_respondents }}
+												</div>
+												<div class="row col-12 padsWithHolder">
+													<div class="col-4"><h4>NAME OF THE HOUSEHOLD HEAD: </h4></div>
+													{{ form.last_name }}
+													{{ form.first_name }}
+												</div>
+												<div class="row col-12">
+													<div class="col-4"></div>
+													<div class="col-3"><div class="text-center font-weight-bold">LAST NAME</div></div>
+													<div class="col-3 ml-3"><div class="text-center font-weight-bold">FIRST NAME</div></div>
+												</div>
+												<div class="row col-md-12 padsWithHolder">
+													<div class="col-4"><h4>ADDRESS: </h4></div>
+													{{ form.address }}
+												</div>
+												<div class="row col-12">
+													<div class="col-4"></div>
+													<div class="col-8"><div class="text-center font-weight-bold">HOUSE/BUILDING NUMBER AND STREET OR SITIO/PUROK NAME</div></div>
+												</div>
+											</div>
+											<!-- ---------------------------------------- END OF GEOGRAPHIC IDENTIFICATION --------------------------------------------- -->
+											
+											<!-- ---------------------------------------- INTERVIEW RECORD --------------------------------------------- -->
+											<div class="boxGrid form-row">
+												<div class="row justify-content-center col-12">
+													<div class="col-auto"><h3 class="fw-bold">INTERVIEW RECORD</h3></div>
+												</div>
+												
+												<div class="row col-12 no-gutters">
+													<div class="row boxGridChildLeft col-7 no-gutters">
+														<div class="row col-12 no-gutters">
+															<div class="col-4 boxTitle ml-2 mb-2 font-weight-bold"><div class="align-self-center">VISIT NUMBER</div></div>
+														</div>
+														<div class="row col-12 no-gutters">
+															<div class="col-2 boxTitle ml-2 mb-2 font-weight-bold"><div class="align-self-center">1</div></div>
+														</div>
+														<div class="row col-12 no-gutters">
+															<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
+																<div class="visitAlign">DATE & TIME CREATED<br><span class="text-muted titleFont">MONTH/DAY/YEAR HH:MM</span></div>
+															</div>
+															{{ form.date_time_created_1 }}
+														</div>
+														<div class="row col-12 no-gutters">
+															<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
+																<div class="visitAlign">DATE & TIME CREATED<br><span class="text-muted titleFont">MONTH/DAY/YEAR HH:MM</span></div>
+															</div>
+															{{ form.date_time_ended_1 }}
+														</div>
+														<div class="row col-12 no-gutters">
+															<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
+																<div class="visitAlign">RESULT<br><span class="text-muted titleFont">MONTH/DAY/YEAR HH:MM</span></div>
+															</div>
+															{{ form.result_1 }}
+														</div>
+														<div class="row col-12 no-gutters">
+															<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
+																<div class="visitAlign">RESULT DESCRIPTION<br><span class="text-muted titleFont">MONTH/DAY/YEAR HH:MM</span></div>
+															</div>
+															{{ form.result_description_1 }}
+														</div>
+														<div class="row col-12 no-gutters">
+															<button type="button" class="col-3 mb-2">Add Visit</button>
+														</div>
+														
+														<!-- ------------------ APPOINTMENT FOR THE NEXT VISIT ----------------------------- -->
+														<!-- Horizontal line -->
+														<div class="row col-11 no-gutters"><hr></div> 
+														<div class="row col-12 justify-content-center no-gutters">
+															<div class="col-auto"><h3 class="fw-bold">APPOINTMENT FOR THE NEXT VISIT</h3></div>
+														</div>
+														<div class="row col-11 no-gutters"><hr></div>
+														<!-- Horizontal line -->
+
+														<div class="row col-12 no-gutters">
+															<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
+																<div class="visitAlign"> DATE & TIME<br><span class="text-muted titleFont">MONTH/DAY/YEAR HH:MM</span></div>
+															</div>
+															{{ form.appointment_date_time_1 }}
+														</div>
+
+														<div class="row col-12 no-gutters">
+															<button type="button" class="col-3 mb-2">Add Appointment</button>
+														</div>
+														
+													</div>
+													<!-- ------------------ SUMMARY OF VISIT ----------------------------- -->
+													<div class="row boxGridChildRight col-5 no-gutters p-2">
+														<div class="row col-12 no-gutters custom-row align-items-center">
+															<div class="col-12 boxTitle font-weight-bold">
+																<div class="align-self-center">SUMMARY OF VISIT</div>
+															</div>
+														</div>
+														
+														<div class="row col-12 no-gutters">
+															<div class="col-8 d-flex align-items-center">NUMBER OF VISIT/S MADE</div>
+															<div class="col-4 d-flex align-items-center">
+																{{ form.number_of_visit }}
+															</div>
+														</div>
+														<div class="row col-12 no-gutters">
+															<div class="col-8 d-flex align-items-center">RESULT OF FINAL VISIT*</div>
+															<div class="col-4 d-flex align-items-center">
+																{{ form.result_of_final_visit }}
+															</div>
+														</div>
+														<div class="row col-12 no-gutters">
+															<div class="col-8 d-flex align-items-center">NUMBER OF HOUSEHOLD MEMBER</div>
+															<div class="col-4 d-flex align-items-center">
+																{{ form.number_of_household_member }}
+															</div>
+														</div>
+														<div class="row col-12 no-gutters">
+															<div class="col-8 d-flex align-items-center">NUMBER OF MALE</div>
+															<div class="col-4 d-flex align-items-center">
+																{{ form.number_male }}
+															</div>
+														</div>
+														<div class="row col-12 no-gutters">
+															<div class="col-8 d-flex align-items-center">NUMBER OF FEMALE</div>
+															<div class="col-4 d-flex align-items-center">
+																{{ form.number_female }}
+															</div>
+														</div>
+														<div class="row col-12 no-gutters">
+															<div class="col-8 d-flex align-items-center">ENUMERATOR'S CODE</div>
+															<div class="col-4 d-flex align-items-center">
+																{{ form.enumerator_code }}
+															</div>
+														</div>
+														<div class="row col-12 no-gutters">
+															<div class="col-8 d-flex align-items-center">MODE OF DATA COLLECTION</div>
+															<div class="col-4 d-flex align-items-center">
+																{{ form.mode_of_data_collection }}
+															</div>
+														</div>
+														<div class="row col-12 no-gutters titleFont">
+															<div class="col-10">1. PAPER AND PENCIL PERSONAL INTERVIEW </div>
+															<div class="col-2 text-left font-weight-bold">(PAPI)</div>
+														</div>
+														<div class="row col-12 no-gutters titleFont">
+															<div class="col-10">2. SELF-ADMINISTERED QUESTIONNAIRE </div>
+															<div class="col-2 text-left font-weight-bold">(SAQ)</div>
+														</div>
+														<div class="row col-12 no-gutters titleFont">
+															<div class="col-10">3. COMPUTER-ASSISTED PERSONAL INTERVIEW </div>
+															<div class="col-2 text-left font-weight-bold">(CAPI)</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										<!-- ---------------------------------------- END OF INTERVIEW RECORD --------------------------------------------- -->
+										</div>
+									
+										<!-- step two -->
+										<div class="step">
+											<div class="boxGrid form-row mb-2">
+												<div class="row justify-content-left col-12">
+													<div class="col-auto"><h4 class="fw-bold">3B</h4></div>
+												</div>
+												<div class="row justify-content-center col-12 titleEdit">POPULATION CENSUS QUESTIONS</div>
+
+												<div class="boxGrid row col-12 ml-1">
+													<div class="col-3">
+														<h5 class="fw-bold">GENERAL INSTRUCTION</h5>
+													</div>
+													<div class="col-9">
+														<div class="row col-12 fw-bold">1. WRITE THE DETAILED ANSWER/DESCRIPTION ON THE LINE.</div>
+														<div class="row col-12 fw-bold">2. WRITE THE NUMBER OR CODE CORRESPONDING TO THE ANSWER IN THE BOXES.</div>
+														<div class="row col-12 fw-bold">3. REFER TO THE CODES FOR ITEMS P2 AT BOTTOM OF THIS PAGE.</div>
+													</div>
+												</div>
+
+												<div class="row col-12 ml-1 justify-content-center">
+													<div class="col-auto">
+														<h3 class="fw-bold">FOR ALL PERSONS</h3>
+													</div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-2 boxGrid fw-bold">Name</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Relationship to the Household Head</div>
+													<div class="col-1 boxGridChildWithoutLeft fw-bold">Sex</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Date of Birth</div>
+													<div class="col-1 boxGridChildWithoutLeft fw-bold">Age</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Birth Registration</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Marital Status</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxTitle">P1</div>
+													<div class="col-2 boxTitle">P2</div>
+													<div class="col-1 boxTitle">P3</div>
+													<div class="col-2 boxTitle">P4</div>
+													<div class="col-1 boxTitle">P5</div>
+													<div class="col-1 boxTitle">P6</div>
+													<div class="col-1 boxTitle">P7</div>
+													<div class="col-2 boxTitle">P8</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxGrid">
+														Who is the head of this household? Who are the persons usually residing here as of May 1, 2020<br><br>
+														ORDER OF LISTING:<br>
+														<li>Head</li>
+														<li>Spouse of the head</li>
+														<li>Never-married children of the head/spouse, from the oldest to the youngest</li>
+														<li>Ever-married children of the head/spouse, from the oldest to the youngest</li>
+														<li>Other relatives of the head</li>	
+														<li>Nonrelatives of the head</li>
+													</div>
+													<div class="col-2 boxGridChildWithoutLeft">What is ___'s relationship to the head of this household?</div>
+													<div class="col-1 boxGridChildWithoutLeft">Is ___ male or female</div>
+													<div class="col-2 boxGridChildWithoutLeft">In what month and year was ___ born?</div>
+													<div class="col-1 boxGridChildWithoutLeft">What is ___'s age as of his/her last birthday?</div>
+													<div class="col-1 boxGridChild3BInstruc">Was ___'s birth registered with the Local Civil Registry Office?</div>
+													<div class="col-1 boxGridChildWithoutLeft">Has ___ ever had a copy of his/her birth certificate?</div>
+													<div class="col-2 boxGridChildWithoutLeft">Is ___ single, married, common law/ live-in, widowed, or divorced/separated/annulled?</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxGridChildWithoutTop">{{form.residing_fullname_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.relationship_to_head_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.gender_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.date_born_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.age_1}}</div>
+													<div class="col-1 boxGridChildOnlyBot">{{form.birth_registered_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.copy_birthcert_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.marital_status_1}}</div>
+												</div>
+
+											
+												<div class="row col-12 no-gutters">
+													<button type="button" class="col-2 mb-2 mt-2">Add Member</button>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-6 boxGrid justify-content-center">
+														<div class="col-12 justify-content-center"><div class="col-auto">CHECK FOR THE PERSONS NOT YET LISTED</div></div>
+													</div>
+													<div class="col-6 boxGridChildWithoutLeft justify-content-center">
+														<div class="col-12 justify-content-center"><div class="col-auto">INDICATOR FOR ADDITIONAL BOOKLET</div></div>
+													</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-6 boxGridChildWithoutTop justify-content-center">
+														<div class="col-12 justify-content-center"><div class="col-auto">
+															Are there other person in this household who were not yet listed, such as infants, small children, elderly person, and overseas worker?
+															
+														</div></div>
+														<div class="col-12 justify-content-center"><div class="col-auto">{{form.not_yet_listed}}</div></div>
+													</div>
+													<div class="col-6 boxGridChildWithoutTopLeft justify-content-center">
+														<div class="col-12 justify-content-center"><div class="col-auto">Are there more than six(6) member in this household?</div></div>
+														<div class="col-12 justify-content-center"><div class="col-auto">{{form.additional_booklet}}</div></div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									
+										<!-- step three -->
+										<div class="step">
+											<div class="boxGrid form-row mb-2">
+												<div class="row justify-content-left col-12">
+													<div class="col-auto"><h4 class="fw-bold">3C</h4></div>
+												</div>
+												<div class="row justify-content-center col-12 titleEdit">POPULATION CENSUS QUESTIONS</div>
+
+												<div class=" row col-12 ml-1">
+													<div class=" boxGridChildWithoutRight col-3">
+														<h5 class="fw-bold">GENERAL INSTRUCTION</h5>
+													</div>
+													<div class="boxGridChildWithoutLeft col-9">
+														<div class="row col-12 fw-bold">1. WRITE THE DETAILED ANSWER/DESCRIPTION ON THE LINE.</div>
+														<div class="row col-12 fw-bold">2. WRITE THE NUMBER OR CODE CORRESPONDING TO THE ANSWER IN THE BOXES.</div>
+														<div class="row col-12 fw-bold">3. REFER TO THE CODE BOOK FOR CODES IN ITEMS P9, P11, P12.</div>
+													</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class=" boxGridChildWithoutTopBottom col-8 justify-content-center">
+														<div class="fw-bold">FOR ALL PERSONS</div>
+													</div>
+
+													<div class=" boxGridChildOnlyRight col-4 justify-content-center">
+														<div class="fw-bold">FOR ALL PERSONS 5 YEARS OLD AND OVER</div>
+													</div>
+
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-2 boxGrid fw-bold">Religious Affiliation</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Citizenship</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Ethnicity</div>
+													<div class="col-6 boxGridChildWithoutLeft fw-bold">Functional Difficulty</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxTitle">P9</div>
+													<div class="col-1 boxTitle">P10</div>
+													<div class="col-1 boxTitle">P11</div>
+													<div class="col-2 boxTitle">P12</div>
+													<div class="col-6 boxTitle">P8</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxGrid">What is ___'s religious affiliation?</div>
+													<div class="col-1 boxGridChildWithoutLeft">
+														Is ___ a citizen of the Philippines?<br><br>
+														IF CODE "1" GO TO ITEM 12.
+													</div>
+													<div class="col-1 boxGridChildWithoutLeft">What country/ other country is ___ a citizen of?</div>
+													<div class="col-2 boxGridChildWithoutLeft">
+														What is ___'s ethnicity by descent/ blood relation/ consanguinity?<br><br>
+														Is he/she a/an ___?<br><br>
+														MENTION THE PREDIMINANT/ COMMON INDIGENOUS PEOPLES (IP) OR NON-IP GROUPS IN THE AREA.
+													</div>
+													<div class="col-6 boxGridChildWithoutLeft">
+														The following question ask about difficulties a person may have doing certain activities because of a HEALTH PROBLEMS.<br><br>
+														Does ___ have any difficulty/ problem in ...?
+														<div class="row">
+															<div class="col-2 boxTitle">a</div>
+															<div class="col-2 boxTitle">b</div>
+															<div class="col-2 boxTitle">c</div>
+															<div class="col-2 boxTitle">d</div>
+															<div class="col-2 boxTitle">e</div>
+															<div class="col-2 boxTitle">f</div>
+														</div>
+
+														<div class="row">
+															<div class="col-2 boxGridChildWithoutLeft">Seeing, even if wearing glasses</div>
+															<div class="col-2 boxGridChildWithoutLeft">Hearing, even if using hearing aid</div>
+															<div class="col-2 boxGridChildWithoutLeft">Walking or climbing steps</div>
+															<div class="col-2 boxGridChildWithoutLeft">Remembering or concentrating</div>
+															<div class="col-2 boxGridChildWithoutLeft">Self-caring (such as washing all over dressing)</div>
+															<div class="col-2 boxGridChildWithoutLeft">Communicating using his/her usual (customary language)</div>
+														</div>
+
+														<div class="row">
+															<div class="fw-bold">MENTION THESE CATEGORIES:</div><br><br>
+															<div class="col-3">1 - NO, no difficulty</div>
+															<div class="col-3">2 - YES, some difficulty</div>
+															<div class="col-3">3 - YES, a lot of difficulty</div>
+															<div class="col-3">4 - Cannot do it at all</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxGridChildWithoutTop">{{form.religion_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.citizen_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.other_country_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.ethnicity_1}}</div>
+													<div class="col-6 boxGridChildWithoutTopLeft">
+														<div class="row">
+															<div class="col-2 boxTitle">a</div>
+															<div class="col-2 boxTitle">b</div>
+															<div class="col-2 boxTitle">c</div>
+															<div class="col-2 boxTitle">d</div>
+															<div class="col-2 boxTitle">e</div>
+															<div class="col-2 boxTitle">f</div>
+														</div>
+														<div class="row">
+															<div class="col-2 boxGridChildLeftBottom">{{form.health_problem_a_1}}</div>
+															<div class="col-2 boxGridChildLeftBottom">{{form.health_problem_b_1}}</div>
+															<div class="col-2 boxGridChildLeftBottom">{{form.health_problem_c_1}}</div>
+															<div class="col-2 boxGridChildLeftBottom">{{form.health_problem_d_1}}</div>
+															<div class="col-2 boxGridChildLeftBottom">{{form.health_problem_e_1}}</div>
+															<div class="col-2 boxGridChildLeftBottom">{{form.health_problem_f_1}}</div>
+														</div>
+													</div>
+												</div>
+
+											
+												<div class="row col-12 no-gutters">
+													<button type="button" class="col-2 mb-2 mt-2">Add Member</button>
+												</div>
+
+												<div class="row col-12 ml-1 boxGrid">
+													<h3 class="fw-bold">Remarks</h3>
+													{{form.remarks_3C}}
+												</div>
+
+											</div>
+										</div>
+
+										<!-- step four -->
+										<div class="step">
+											<div class="boxGrid form-row mb-2">
+												<div class="row justify-content-left col-12">
+													<div class="col-auto"><h4 class="fw-bold">3D</h4></div>
+												</div>
+												<div class="row justify-content-center col-12 titleEdit">POPULATION CENSUS QUESTIONS</div>
+
+												<div class=" row col-12 ml-1">
+													<div class=" boxGridChildWithoutRight col-3">
+														<h5 class="fw-bold">GENERAL INSTRUCTION</h5>
+													</div>
+													<div class="boxGridChildWithoutLeft col-9">
+														<div class="row col-12 fw-bold">1. WRITE THE DETAILED ANSWER/DESCRIPTION ON THE LINE.</div>
+														<div class="row col-12 fw-bold">2. WRITE THE NUMBER OR CODE CORRESPONDING TO THE ANSWER IN THE BOXES.</div>
+														<div class="row col-12 fw-bold">3. REFER TO THE CODE BOOK FOR CODES IN ITEMS P14, P15, P19.</div>
+													</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class=" boxGridChildWithoutTopBottom col-7 justify-content-center">
+														<div class="fw-bold">FOR ALL PERSONS 5 YEARS OLD AND OVER</div>
+													</div>
+
+													<div class=" boxGridChildOnlyRight col-4 justify-content-center">
+														<div class="fw-bold">FOR ALL PERSONS 5 TO 28 YEARS OLD</div>
+													</div>
+
+													<div class=" boxGridChildOnlyRight col-1 justify-content-center">
+														<div class="fw-bold">FOR ALL PERSONS 15 YEARS OLD AND OVER</div>
+													</div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-2 boxGrid fw-bold">Residence of Mother at the Time of Birth of the Household Member</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Residence Five (5) Years Ago</div>
+													<div class="col-1 boxGridChildWithoutLeft fw-bold">Literacy</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Highest Grade/ Year Completed</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">School Attendance</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Place of School</div>
+													<div class="col-1 boxGridChildWithoutLeft fw-bold">Overseas Worker</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxTitle">P14</div>
+													<div class="col-2 boxTitle">P15</div>
+													<div class="col-1 boxTitle">P16</div>
+													<div class="col-2 boxTitle">P17</div>
+													<div class="col-2 boxTitle">P18</div>
+													<div class="col-2 boxTitle">P19</div>
+													<div class="col-1 boxTitle">P20</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxGrid">In what province and city/municipality did ___'s mother reside at the time of ___'s birth?</div>
+													<div class="col-2 boxGridChildWithoutLeft">In what province and city/municipality did ___ reside on May 1, 2015?</div>
+													<div class="col-1 boxGridChildWithoutLeft">Can ___ read and write a simple message in any language or dialect?</div>
+													<div class="col-2 boxGridChildWithoutLeft">What is the highest grade/ year complete by ___?</div>
+													<div class="col-2 boxGridChildWithoutLeft">Did ___ attend school at anytime from June 2019 to May 2020?<br><br> IF CODE "2", GO TO ITEM P20</div>
+													<div class="col-2 boxGridChildWithoutLeft">In what province and city/ municipality did ___ attend school?</div>
+													<div class="col-1 boxGridChildWithoutLeft">Is ___ an overseas worker?</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxGridChildWithoutTop">{{form.province_time_birth_1}}<br>{{form.municipality_time_birth_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.province_reside_1}}<br>{{form.municipality_reside_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.read_write_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.highest_year_completed_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.attend_school_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.province_school_attended_1}}<br>{{form.municipality_school_attended_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.overseas_worker_1}}</div>
+													
+												</div>
+
+											
+												<div class="row col-12 no-gutters">
+													<button type="button" class="col-2 mb-2 mt-2">Add Member</button>
+												</div>
+											</div>
+										</div>
+
+										<!-- step five -->
+										<div class="step">
+											<div class="boxGrid form-row mb-2">
+												<div class="row justify-content-left col-12">
+													<div class="col-auto"><h4 class="fw-bold">3E</h4></div>
+												</div>
+												<div class="row justify-content-center col-12 titleEdit">POPULATION CENSUS QUESTIONS</div>
+
+												<div class=" row col-12 ml-1">
+													<div class=" boxGridChildWithoutRight col-3">
+														<h5 class="fw-bold">GENERAL INSTRUCTION</h5>
+													</div>
+													<div class="boxGridChildWithoutLeft col-9">
+														<div class="row col-12 fw-bold">1. WRITE THE DETAILED ANSWER/DESCRIPTION ON THE LINE.</div>
+														<div class="row col-12 fw-bold">2. WRITE THE NUMBER OR CODE CORRESPONDING TO THE ANSWER IN THE BOXES.</div>
+														<div class="row col-12 fw-bold">3. REFER TO THE CODE BOOK FOR CODES IN ITEM P24.</div>
+													</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class=" boxGridChildWithoutTopBottom col-7 justify-content-center">
+														<div class="fw-bold">FOR ALL PERSONS 15 YEARS OLD AND OVER</div>
+													</div>
+
+													<div class=" boxGridChildOnlyRight col-5 justify-content-center">
+														<div class="fw-bold">FOR ALL FEMALE PERSONS 15 TO 49 YEARS OLD</div>
+													</div>
+
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-2 boxGrid fw-bold">Usual Activity/ Occupation</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Kind of Business or Industry</div>
+													<div class="col-1 boxGridChildWithoutLeft fw-bold">Class of Worker</div>
+													<div class="col-2 boxGridChildWithoutLeft fw-bold">Place of Work</div>
+													<div class="col-5 boxGridChildWithoutLeft fw-bold">Fertility Indicators</div>
+												
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxTitle">P21</div>
+													<div class="col-2 boxTitle">P22</div>
+													<div class="col-1 boxTitle">P23</div>
+													<div class="col-2 boxTitle">P24</div>
+													<div class="col-1 boxTitle">P25</div>
+													<div class="col-1 boxTitle">P26</div>
+													<div class="col-1 boxTitle">P27</div>
+													<div class="col-2 boxTitle">P28</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxGrid">During the past 12 months, what was ___'s usual activity/ occupation?</div>
+													<div class="col-2 boxGridChildWithoutLeft">In what kind of business of industry did ___ work during the past 12 months?</div>
+													<div class="col-1 boxGridChildWithoutLeft">What kind of worker ___ is?</div>
+													<div class="col-2 boxGridChildWithoutLeft">In what province and city/ municipality did ___ work during the past 12 months?</div>
+													<div class="col-1 boxGridChildWithoutLeft">How many children have been born alive to ___?<br><br> If none, write '00' amd go to item P28</div>
+													<div class="col-1 boxGridChildWithoutLeft">From among the children who have been born alive to ___, how many are still living?</div>
+													<div class="col-1 boxGridChildWithoutLeft">From among the children who have been born alive to ___, how many were born alive from May 1, 2019 to April 30,2020</div>
+													<div class="col-2 boxGridChildWithoutLeft">What was ___'s age at first marriage?</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class="col-2 boxGridChildWithoutTop">{{form.usual_activity_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.business_worked_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.kind_of_worker_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.province_work_past12months_1}}<br>{{form.municipality_work_past12months_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.children_borned_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.children_still_living_1}}</div>
+													<div class="col-1 boxGridChildWithoutTopLeft">{{form.children_alive_specificdate_1}}</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.age_firstmarriage_1}}</div>
+												</div>
+
+											
+												<div class="row col-12 no-gutters">
+													<button type="button" class="col-2 mb-2 mt-2">Add Member</button>
+												</div>
+
+												<div class="row col-12 ml-1 boxGrid">
+													<h3 class="fw-bold">Remarks</h3><br>
+													{{form.remarks_3E}}
+												</div>
+											</div>
+										</div>
+										
+										<!-- start previous / next buttons -->
+										<div class="form-footer d-flex justify-content-between">
+											<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+											<button type="button" class="btn btn-md nextBtn" id="nextBtn" onclick="nextPrev(1)">Next</button>
+											<button type="submit" id="submitBtn" style="display: none;">Submit</button>
+											<!-- <button type="submit">submit</button> -->
+										</div>
+										
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -353,7 +678,6 @@
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
-
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
 	<script src="/static/assets/js/setting-demo2.js"></script>
@@ -366,4 +690,5 @@
 		$('#reservationDate').datetimepicker();
 		});
 	</script> -->
+	
 {% endblock javascripts %}	

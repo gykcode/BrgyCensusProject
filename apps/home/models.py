@@ -1,8 +1,63 @@
 from django.db import models
 
 # Create your models here.
+MODE_CHOICES = [
+            ('PAPI', 'PAPI'),
+            ('SAQ', 'SAQ'),
+            ('CAPI', 'CAPI'),
+        ]
+RESULT_CHOICES = [
+            ('1', '1. COMPLETED'),
+            ('2', '2. NOT YET COMPLETED (FOR CALLBACK)'),
+            ('3', '3. ENTRIRE HOUSEHOLD IS ABSENT/AWAY DURING THE ENUMERATION PERIOD'),
+            ('4', '4. REFUSED'),
+            ('5', '5. OTHERS, SPECIFY'),
+        ]
+
+RELATIONSHIP_CHOICES = [
+            ('1', 'Head'),
+            ('2', 'Spouse of the head'),
+            ('3', 'Never-married children of the head/spouse, from the oldest to the youngest'),
+            ('4', 'Ever-married children of the head/spouse, from the oldest to the youngest'),
+            ('5', 'Other relatives of the head'),
+            ('6', 'Nonrelatives of the head'),
+        ]
+
+GENDER_CHOICES = [
+            ('1', 'MALE'),
+            ('2', 'FEMALE'),
+        ]
+
+CLOSED_CHOICES = [
+            ('Yes', '1'),
+            ('No', '2'),
+        ]
+
+MARITAL_STATUS_CHOICES = [
+            ('1', 'SINGLE'),
+            ('2', 'MARRIED'),
+            ('3', 'COMMON LAW/ LIVE-IN'),
+            ('4', 'WIDOWED'),
+            ('5', 'DIVORCED/ SEPARATED/ ANNULLED'),
+        ]
+PERSON_NOT_YET_LISTED_CHOICES = [
+            ('1', 'Yes, add to the list'),
+            ('2', 'None'),
+        ]
+ADDITIONAL_BOOKLET_CHOICES = [
+            ('1', 'Yes, use additional booklet'),
+            ('2', 'None'),
+        ]
+HEALTH_PROBLEM_CHOICES = [
+            ('1', '1'),
+            ('2', '2'),
+            ('3', '3'),
+            ('4', '4'),
+        ]
+
 
 class CensusFormModel(models.Model):
+    #3A
     enumeration_area_number = models.CharField(max_length=200, null=True, blank=True)
     building_serial = models.CharField(max_length=200, null=True, blank=True)
     housing_unit_serial_number = models.CharField(max_length=200, null=True, blank=True)
@@ -13,12 +68,26 @@ class CensusFormModel(models.Model):
     address = models.CharField(max_length=200, null=True, blank=True)
 
     # visit number
-    date_1 = models.DateTimeField(null=True, blank=True)
-    time_begin_1 = models.DateTimeField(null=True, blank=True)
-    time_ended_1 = models.DateTimeField(null=True, blank=True)  
-    # result_1 = 
+    date_time_created_1 = models.DateTimeField( null=True, blank=True )
+    date_time_ended_1 = models.DateTimeField( null=True, blank=True )
+    result_1 = models.CharField(max_length=4, choices=RESULT_CHOICES, blank=True, default='')
+    result_description_1 = models.IntegerField( null=True, blank=True )
+
+    date_time_created_2 = models.DateTimeField( null=True, blank=True )
+    date_time_ended_2 = models.DateTimeField( null=True, blank=True )
+    result_2 = models.CharField(max_length=4, choices=RESULT_CHOICES, blank=True, default='')
+    result_description_2 = models.IntegerField( null=True, blank=True )
+
+    date_time_created_3 = models.DateTimeField( null=True, blank=True )
+    date_time_ended_3 = models.DateTimeField( null=True, blank=True )
+    result_3 = models.CharField(max_length=4, choices=RESULT_CHOICES, blank=True, default='')
+    result_description_3 = models.IntegerField( null=True, blank=True )
+    
 
     #appointment for the next visit
+    appointment_date_time_1 = models.DateTimeField( null=True, blank=True )
+    appointment_date_time_2 = models.DateTimeField( null=True, blank=True )
+    appointment_date_time_3 = models.DateTimeField( null=True, blank=True )
 
     #summary of visit
     number_of_visit = models.IntegerField(null=True, blank=True)
@@ -27,11 +96,57 @@ class CensusFormModel(models.Model):
     number_male = models.IntegerField(null=True, blank=True)
     number_female = models.IntegerField(null=True, blank=True)
     enumerator_code = models.IntegerField(null=True, blank=True)
-    mode_of_data_collection = models.CharField(max_length=4, null=True, blank=True)
+    mode_of_data_collection = models.CharField(max_length=4, choices=MODE_CHOICES, default='PAPI')
 
-    def firstdate(self):
-        return self.date_1.strftime('%B %d')
 
-# class InterviewRecordModel(models.Model):
-   
+    #3B
+    residing_fullname_1 = models.CharField(max_length=200, null=True, blank=True)
+    relationship_to_head_1 = models.CharField(max_length=4, choices=RELATIONSHIP_CHOICES, blank=True, default='')
+    gender_1 = models.CharField(max_length=4, choices=GENDER_CHOICES, blank=True, default='')
+    date_born_1 = models.DateTimeField( null=True, blank=True )
+    age_1 = models.IntegerField(null=True, blank=True)
+    birth_registered_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
+    copy_birthcert_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
+    marital_status_1 = models.CharField(max_length=4, choices=MARITAL_STATUS_CHOICES, default='1')
+
+    not_yet_listed = models.CharField(max_length=4, choices=PERSON_NOT_YET_LISTED_CHOICES, blank=True, default='')
+    additional_booklet = models.CharField(max_length=4, choices=ADDITIONAL_BOOKLET_CHOICES, blank=True, default='')
+
+
+    #3C
+    religion_1 = models.CharField(max_length=200, null=True, blank=True)
+    citizen_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
+    other_country_1 = models.CharField(max_length=200, null=True, blank=True)
+    ethnicity_1 = models.CharField(max_length=200, null=True, blank=True)
+    health_problem_a_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+    health_problem_b_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+    health_problem_c_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+    health_problem_d_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+    health_problem_e_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+    health_problem_f_1 = models.CharField(max_length=4, choices=HEALTH_PROBLEM_CHOICES, blank=True, default='')
+    remarks_3C = models.CharField(max_length=200, null=True, blank=True)
+
+    #3D
+    province_time_birth_1 = models.CharField(max_length=200, null=True, blank=True)
+    municipality_time_birth_1 = models.CharField(max_length=200, null=True, blank=True)
+    province_reside_1 = models.CharField(max_length=200, null=True, blank=True)
+    municipality_reside_1 = models.CharField(max_length=200, null=True, blank=True)
+    read_write_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
+    highest_year_completed_1 = models.CharField(max_length=200, null=True, blank=True)
+    attend_school_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
+    province_school_attended_1 = models.CharField(max_length=200, null=True, blank=True)
+    municipality_school_attended_1 = models.CharField(max_length=200, null=True, blank=True)
+    overseas_worker_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
+
+    #3E
+    usual_activity_1 = models.CharField(max_length=200, null=True, blank=True)
+    business_worked_1 = models.CharField(max_length=200, null=True, blank=True)
+    kind_of_worker_1 = models.CharField(max_length=200, null=True, blank=True)
+    province_work_past12months_1 = models.CharField(max_length=200, null=True, blank=True)
+    municipality_work_past12months_1 = models.CharField(max_length=200, null=True, blank=True)
+    children_borned_1 = models.IntegerField(null=True, blank=True)
+    children_still_living_1 = models.IntegerField(null=True, blank=True)
+    children_alive_specificdate_1 = models.IntegerField(null=True, blank=True)
+    age_firstmarriage_1 = models.IntegerField(null=True, blank=True)
+    remarks_3E = models.CharField(max_length=200, null=True, blank=True)
     

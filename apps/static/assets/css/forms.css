@@ -51,9 +51,6 @@
   align-items: center;
 }
 
-.form_width{
-  width: 100%;
-}
 #CensusFormId {
   /* max-width: 500px; */
   /* background-color: #ffffff; */
@@ -92,11 +89,11 @@
   border: 3px solid #ecf5f4;
 }
 #CensusFormId .form-header .stepIndicator.active::before {
-  background-color: #a7ede8;
+  background-color: #0781c8;
   border: 3px solid #d5f9f6;
 }
 #CensusFormId .form-header .stepIndicator.finish::before {
-  background-color: #009688;
+  background-color: #16dac3;
   border: 3px solid #b7e1dd;
 }
 #CensusFormId .form-header .stepIndicator::after {
@@ -112,17 +109,18 @@
   background-color: #a7ede8;
 }
 #CensusFormId .form-header .stepIndicator.finish::after {
-  background-color: #009688;
+  background-color: #1bc0af;
 }
 #CensusFormId .form-header .stepIndicator:last-child:after {
   display: none;
 }
 #CensusFormId input {
-  padding: 15px 20px;
+  padding: 10px 15px;
   width: 100%;
   font-size: 1em;
   border: 1px solid #e3e3e3;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 #CensusFormId input:focus {
   border: 1px solid #009688;
@@ -143,7 +141,7 @@ display: none;
   border: 1px solid #009688 !important;
   color: #ffffff;
   border: none;
-  /* padding: 13px 30px;*/
+  padding: 13px 30px;
   font-size: 1em; 
   cursor: pointer;
   border-radius: 5px;
@@ -166,7 +164,7 @@ opacity: 0.8;
   padding: 10px;
   border: 2px solid black;
   color: black;
-  width: 60vw;
+  /* width: 60vw; */
   overflow: hidden;
 }
 
@@ -185,6 +183,86 @@ opacity: 0.8;
   border-left: none;
   border-bottom: none;
   border-right: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChild3BInstruc {
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  border-right: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildOnlyBot {
+  padding: 10px;
+  border: 2px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutLeft {
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutTop {
+  padding: 10px;
+  border: 2px solid black;
+  border-top: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutTopLeft {
+  padding: 10px;
+  border: 2px solid black;
+  border-top: none;
+  border-left: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutTopBottom {
+  padding: 10px;
+  border: 2px solid black;
+  border-top: none;
+  border-bottom: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutRight {
+  padding: 10px;
+  border: 2px solid black;
+  border-right: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildOnlyRight{
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildLeftBottom{
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  border-bottom: none;
   color: black;
   overflow: hidden;
 }
@@ -247,13 +325,15 @@ hr {
   display: flex;
 }
 
-/* .datepicker td, .datepicker th {
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 0.85rem;
+.titleEdit{
+  font-size: 1.5em;
+  font-weight: 900;
 }
 
-.datepicker {
-  margin-bottom: 3rem;
+/* input[type="date"]::-
+webkit-calendar-picker-indicator, 
+input[type="date"]::
+-webkit-inner-spin-button, 
+input[type="date"]::-webkit-clear-button { 
+  display: none;
 } */
-
