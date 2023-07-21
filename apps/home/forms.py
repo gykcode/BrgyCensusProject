@@ -90,8 +90,8 @@ class CensusForm(forms.ModelForm):
 
             'date_time_created_1' : forms.DateTimeInput(attrs={'type': 'datetime-local', 'class': 'form-control col-7 inputBorder mt-1 mr-1'}),
             'date_time_ended_1' : forms.TimeInput(attrs={'type': 'datetime-local', 'class': 'form-control col-7 inputBorder mt-1 mr-1'}),
-            'result_1' : forms.Select(attrs={'class': 'form-control col-7 inputBorder mt-1 mr-1', 'onchange': 'handleResultChange()'}),
-            'result_description_1': forms.TextInput(attrs={'class': 'form-control col-7 inputBorder mt-1 mr-1', 'readonly': 'readonly'}),
+            'result_1' : forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1 mr-1', 'onchange': 'handleResultChange()'}),
+            'result_description_1': forms.TextInput(attrs={'class': 'form-control col-7 inputBorder mt-1 mr-1', 'readonly': 'readonly', 'placeholder': 'Specify Reason'}),
 
             'number_of_visit': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder mt-1 '}),
             'result_of_final_visit': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder mt-1 '}),
@@ -145,9 +145,9 @@ class CensusForm(forms.ModelForm):
             'kind_of_worker_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
             'province_work_past12months_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ','placeholder': 'province',}),
             'municipality_work_past12months_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'placeholder': 'municipality'}),
-            'children_borned_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
-            'children_still_living_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
-            'children_alive_specificdate_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+            'children_borned_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'oninput': 'handle3EChange()'}),
+            'children_still_living_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'readonly': 'readonly'}),
+            'children_alive_specificdate_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'readonly': 'readonly'}),
             'age_firstmarriage_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
             'remarks_3E': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
         }

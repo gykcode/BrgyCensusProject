@@ -29,8 +29,8 @@ GENDER_CHOICES = [
         ]
 
 CLOSED_CHOICES = [
-            ('Yes', '1'),
-            ('No', '2'),
+            ('Yes', '1: YES'),
+            ('No', '2: NO'),
         ]
 
 MARITAL_STATUS_CHOICES = [

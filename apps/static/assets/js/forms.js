@@ -89,18 +89,19 @@ function handle3CChange() {
   }
 }
 
-function handle3DChange() {
-  var schoolattendedSelect = document.getElementById('id_attend_school_1');
-  var provinceField = document.getElementById('id_province_school_attended_1');
-  var municipalityField = document.getElementById('id_municipality_school_attended_1');
+function handle3EChange() {
+  var childrenBorned = document.getElementById('id_children_borned_1');
+  var childrenStillLiving = document.getElementById('id_children_still_living_1');
+  var childrenALive = document.getElementById('id_children_alive_specificdate_1');
   
-  if (schoolattendedSelect.value === 'No') {
-    provinceField.removeAttribute('readonly');
-    municipalityField.removeAttribute('readonly');
+  console.log(childrenBorned.value);
+  if (childrenBorned.value === '00') {
+    childrenStillLiving.removeAttribute('readonly');
+    childrenALive.removeAttribute('readonly');
     
   } else {
-    provinceField.setAttribute('readonly', 'readonly');
-    municipalityField.setAttribute('readonly', 'readonly');
+    childrenStillLiving.setAttribute('readonly', 'readonly');
+    childrenALive.setAttribute('readonly', 'readonly');
     
   }
 }

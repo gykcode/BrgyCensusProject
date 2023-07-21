@@ -276,6 +276,11 @@ opacity: 0.8;
   border-radius: 10px;
   /* margin-right: 2px; */
 }
+.selectPads{
+  display: flex; 
+  align-items: center;
+}
+
 .pads{
   padding: 10px;
 }
