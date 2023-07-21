@@ -54,7 +54,67 @@ HEALTH_PROBLEM_CHOICES = [
             ('3', '3'),
             ('4', '4'),
         ]
-
+TYPE_OF_BUILDING_CHOICES = [
+            ('1', '1. Single house'),
+            ('2', '2. Duplex'),
+            ('3', '3. Apartment/accesories/ rowhouse'),
+            ('4', '4. Condominium/condotel'),
+            ('5', '5. Other multi-unit residential'),
+            ('6', '6. Commercial/industrial/ agricultural (eg. office, factory, barn)'),
+            ('7', '7. Institutional living quarter	(e.g. hotel, hospital, convent, jail)'),
+            ('8', '8. Other types of building (e.g. bus/trailer, boat, tent), SPECIFY'),
+            ('9', '9. None (e.g. homeless, cart), END INTERVIEW'),
+        ]
+NUMBER_OF_FLOORS = [
+            ('1', '1. One floor (e.g. bungalow, including basement/ mezzanine floor)'),
+            ('2', '2. Two floor'),
+            ('3', '3. Three floors'),
+            ('4', '4. Four floors'),
+            ('5', '5. Five to 10 floors'),
+            ('6', '6. 11 floors or more'),
+        ]
+YEAR_BUILT = [
+            ('1', '1. 2020'),
+            ('2', '2. 2019'),
+            ('3', '3. 2018'),
+            ('4', '4. 2017'),
+            ('5', '5. 2016'),
+            ('6', '6. 2011-2015'),
+            ('7', '7. 2001-2010'),
+            ('8', '8. 1991-2000'),
+            ('9', '9. 1981-1990'),
+            ('10', '10. 1980 or earlier'),
+            ('11', '11. Don\'t know'),
+        ]
+FLOOR_AREA_HOUSE_UNIT = [
+            ('1', '1. Less than 5 sq.m. or Less that 54 sq.ft.'),
+            ('2', '2. 5-9 sq.m. or 54-107 sq.ft.'),
+            ('3', '3. 10-19 sq.m. or 108-209 sq.ft.'),
+            ('4', '4. 20-29 sq.m. or 210-317 sq.ft.'),
+            ('5', '5. 30-49 sq.m. or 318-532 sq.ft.'),
+            ('6', '6. 50-69 sq.m. or 533-748 sq.ft.'),
+            ('7', '7. 70-89 sq.m. or 749-963 sq.ft.'),
+            ('8', '8. 90-119 sq.m. or 964-1,286 sq.ft.'),
+            ('9', '9. 120-149 sq.m. or 1,287-1609 sq.ft.'),
+            ('10', '10. 150-199 sq.m. or 1610-2147 sq.ft.'),
+            ('11', '11. 200 sq.m. and over or 2148 sq.ft. and over'),
+        ]
+TENURE_STATUS = [
+            ('1', '1. Own or owner-like possesion of the house and lot'),
+            ('2', '2. Own house, rent lot'),
+            ('3', '3. Own house, rent-free lot with consent of owner'),
+            ('4', '4. Own house, rent-free lot without consent of owner'),
+            ('5', '5. Rent house/room, including lot'),
+            ('6', '6. Rent-free house and lot with consent of owner'),
+            ('7', '7. Rent-free house and lot without consent of owner'),
+        ]
+ACQUISITION_HOUSE = [
+            ('1', '1. Inherited'),
+            ('2', '2. Gift'),
+            ('3', '3. Company benefit'),
+            ('4', '4. Purchased'),
+            ('5', '5. Other, Specify'),
+        ]
 
 class CensusFormModel(models.Model):
     #3A
@@ -150,3 +210,12 @@ class CensusFormModel(models.Model):
     age_firstmarriage_1 = models.IntegerField(null=True, blank=True)
     remarks_3E = models.CharField(max_length=200, null=True, blank=True)
     
+    #3F
+    type_of_building = models.CharField(max_length=200, null=True, choices=TYPE_OF_BUILDING_CHOICES, default='')
+    type_of_building_specify = models.CharField(max_length=200, null=True, blank=True)
+    number_of_floors = models.CharField(max_length=200, null=True, choices=NUMBER_OF_FLOORS, default='')
+    year_building_built = models.CharField(max_length=200, null=True, choices=YEAR_BUILT, default='')
+    floor_area_of_housing = models.CharField(max_length=200, null=True, choices=FLOOR_AREA_HOUSE_UNIT, default='')
+    tenure_status_of_housing = models.CharField(max_length=200, null=True, choices=TENURE_STATUS, default='')
+    acquisition_of_housing = models.CharField(max_length=200, null=True, choices=ACQUISITION_HOUSE, default='')
+    acquisition_of_housing_specify = models.CharField(max_length=200, null=True, blank=True)

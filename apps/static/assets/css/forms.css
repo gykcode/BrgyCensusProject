@@ -22,7 +22,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 700px 700px;
-  opacity: 0.2; /* Set the desired opacity value */
+  opacity: 0.05; /* Set the desired opacity value */
   z-index: 0;
 }
 
@@ -333,6 +333,10 @@ hr {
 .titleEdit{
   font-size: 1.5em;
   font-weight: 900;
+}
+
+.radioInput {
+  width: max-content !important;
 }
 
 /* input[type="date"]::-

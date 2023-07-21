@@ -105,3 +105,24 @@ function handle3EChange() {
     
   }
 }
+
+function handle3FChange() {
+  var buildingType = document.getElementById('id_type_of_building_7');
+  var buildingTypeSpecify = document.getElementById('id_type_of_building_specify');
+  var acquisitionHouse = document.getElementById('id_acquisition_of_housing_5');
+  var acquisitionHouseSpecify = document.getElementById('id_acquisition_of_housing_specify');
+  
+  if (buildingType.checked) {
+    buildingTypeSpecify.removeAttribute('readonly');
+  } else {
+    buildingTypeSpecify.setAttribute('readonly', 'readonly');
+  }
+
+  if (acquisitionHouse.checked) {
+    acquisitionHouseSpecify.removeAttribute('readonly');
+  } else {
+    acquisitionHouseSpecify.setAttribute('readonly', 'readonly');
+  }
+
+
+}

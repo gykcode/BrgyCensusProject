@@ -659,6 +659,97 @@
 											</div>
 										</div>
 										
+										<!-- step six -->
+										<div class="step">
+											<div class="boxGrid form-row mb-2">
+												<div class="row justify-content-left col-12">
+													<div class="col-auto"><h4 class="fw-bold">3E</h4></div>
+												</div>
+												<div class="row justify-content-center col-12 titleEdit">POPULATION CENSUS QUESTIONS</div>
+
+												<div class=" row col-12 ml-1">
+													<div class=" boxGridChildWithoutRight col-3">
+														<h5 class="fw-bold">GENERAL INSTRUCTION</h5>
+													</div>
+													<div class="boxGridChildWithoutLeft col-9">
+														<div class="row col-12 fw-bold">1. WRITE THE NUMBER OR CODE CORRESPONDING TO THE ANSWER IN THE BOX.</div>
+														<div class="row col-12 fw-bold">2. WRITE THE ANSWER/DETAILED ON THE LINE PROVIDED FOR "OTHER, SPECIFY". IN ITEMS B1 AND B3 TO B6 AND H2.</div>
+													</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class=" boxGridChildWithoutTopBottom col-10 justify-content-center">
+														<div class="fw-bold">ITEMS B1 TO B4 AND B7 ARE TO BE ANSWERED THROUGH OBSERVATION, IF DOUBTFUL, ASK THE RESPONDENT</div>
+													</div>
+
+													<div class=" boxGridChildOnlyRight col-2 justify-content-center">
+														<div class="fw-bold">CODE</div>
+													</div>
+
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGrid">
+														<div class="row col-12">
+															<div class="fw-bold">B1 Type of building</div>
+															{{form.type_of_building}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWithoutLeft">{{form.type_of_building_specify}}</div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="fw-bold">B2 Number of floors of the building</div>
+															{{form.number_of_floors}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWithoutTopLeft"></div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="fw-bold">B8 Year Building was built</div>
+															{{form.year_building_built}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWithoutTopLeft"></div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="fw-bold">D1 Floor area of the housing unit</div>
+															{{form.floor_area_of_housing}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWithoutTopLeft"></div>
+												</div>
+												
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="col-12">
+															<div class="fw-bold">H1 Tenure status of the housing unit/lot</div>
+															{{form.tenure_status_of_housing}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWithoutTopLeft"></div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="col-12">
+															<div class="fw-bold">H2 Acquisition of the housing unit</div>
+															{{form.acquisition_of_housing}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.acquisition_of_housing_specify}}</div>
+												</div>
+											</div>
+										</div>
+
 										<!-- start previous / next buttons -->
 										<div class="form-footer d-flex justify-content-between">
 											<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>

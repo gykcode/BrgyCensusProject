@@ -75,6 +75,16 @@ class CensusForm(forms.ModelForm):
             'children_alive_specificdate_1',
             'age_firstmarriage_1',
             'remarks_3E',
+
+            #3F
+            'type_of_building',
+            'type_of_building_specify',            
+            'number_of_floors',
+            'year_building_built',
+            'floor_area_of_housing',
+            'tenure_status_of_housing',
+            'acquisition_of_housing',
+            'acquisition_of_housing_specify',
         ]  # Or specify the specific fields you want to include
 
         widgets= {
@@ -150,5 +160,17 @@ class CensusForm(forms.ModelForm):
             'children_alive_specificdate_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'readonly': 'readonly'}),
             'age_firstmarriage_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
             'remarks_3E': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+
+            #3F
+            'type_of_building': forms.RadioSelect(attrs={'class': 'radioInput', 'onchange': 'handle3FChange()'}),
+            'type_of_building_specify': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'readonly': 'readonly'}), 
+            'number_of_floors': forms.RadioSelect(attrs={'class': 'radioInput'}),
+            'year_building_built': forms.RadioSelect(attrs={'class': 'radioInput'}),
+            'floor_area_of_housing': forms.RadioSelect(attrs={'class': 'radioInput'}),
+            'tenure_status_of_housing': forms.RadioSelect(attrs={'class': 'radioInput'}),
+            'acquisition_of_housing': forms.RadioSelect(attrs={'class': 'radioInput', 'onchange': 'handle3FChange()'}),
+            'acquisition_of_housing_specify': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'readonly': 'readonly'}),
         }
+
+
        
