@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.safestring import mark_safe
 
 # Create your models here.
 MODE_CHOICES = [
@@ -115,8 +116,59 @@ ACQUISITION_HOUSE = [
             ('4', '4. Purchased'),
             ('5', '5. Other, Specify'),
         ]
-
-class CensusFormModel(models.Model):
+MONTHLY_RENTAL = [
+            ('1', '1. PhP 500 or less'),
+            ('2', '2. PhP 501 - 1,000'),
+            ('3', '3. PhP 1,001 - 1,500'),
+            ('4', '4. PhP 1,501 - 2,000'),
+            ('5', '5. PhP 2,501 - 4,000'),
+            ('6', '6. PhP 4,001 - 6,000'),
+            ('7', '7. PhP 6,001 - 7,500'),
+            ('8', '8. PhP 7,501 - 10,000'),
+            ('9', '9. PhP 10,001 and over'),
+        ]
+CONVENIENCES_CHOICES = [
+            ('1', 'a. Refrigerator/ freezer'),
+            ('2', 'b. Stove with oven/ gas range'),
+            ('3', 'c. Microwave oven'),
+            ('4', 'd. Washing Machine'),
+            ('5', 'e. Air Conditioner'),
+            ('6', 'f. Electric fan and other cooling equipment'),
+        ]
+ICT_DEVICES_CHOICES = [
+            ('1', 'g. Radio/ radio cassete (AM, PM, and transistor)'),
+            ('2', 'h. Television'),
+            ('3', 'i. CD/ DVD/ VCD'),
+            ('4', 'j. Audio component/ stereo set/ karaoke/ videoke'),
+            ('5', 'k. Landline/ wireless telephone'),
+            ('6', 'l. Mobile phone'),
+            ('7', 'm. Tablet'),
+            ('8', 'n. Personal computer (desktop, laptop, notebook, netbook, and others)'),
+        ]
+VEHICLES_CHOICES = [
+            ('1', 'o. Car/ van/ jeep/ truck'),
+            ('2', 'p. Motorcycle/ motor scooter/ tricycle'),
+            ('3', 'q. Bicycle/ pedicap'),
+            ('4', 'r. Motorized boat/ banca'),
+            ('5', 's. Nonmotorized boat/ banca'),
+        ]
+INTERNET_ACCESS_CHOICES = [
+            ('1', mark_safe('a. fixed (wired) narrowband/ broadband network [e.g. via Digital Subscriber Line (DSL), cable modem, high speed leased line,<br> fiber-to-the-home/building, powerline/ and other fixed (wired) broadband]')),
+            ('2', 'b. fixed (wireless) broadband network [e.g. via WiMAX and fixed Code Division Multiple Access (CDMA)]'),
+            ('3', 'c. Satelite broadband network'),
+            ('4', 'd. Mobile broadband network [e.g. via handset, card (e.g. integrated Subscriber Identify Module or SIM card) or USB modem]'),
+        ]
+INTERNET_USE_CHOICES = [
+            ('1', 'a. Home'),
+            ('2', 'b. Work'),
+            ('3', 'c. School'),
+            ('4', 'd. Another person\'s home'),
+            ('5', 'e. Public place'),
+            ('6', 'f. Private establishment'),
+            ('7', 'g. Internet cafe/ computer shop'),
+            ('8', 'h. In mobility'),
+        ]
+class CensusNewFormModel(models.Model):
     #3A
     enumeration_area_number = models.CharField(max_length=200, null=True, blank=True)
     building_serial = models.CharField(max_length=200, null=True, blank=True)
@@ -165,12 +217,12 @@ class CensusFormModel(models.Model):
     gender_1 = models.CharField(max_length=4, choices=GENDER_CHOICES, blank=True, default='')
     date_born_1 = models.DateTimeField( null=True, blank=True )
     age_1 = models.IntegerField(null=True, blank=True)
-    birth_registered_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
-    copy_birthcert_1 = models.CharField(max_length=4, choices=CLOSED_CHOICES, blank=True, default='')
-    marital_status_1 = models.CharField(max_length=4, choices=MARITAL_STATUS_CHOICES, default='1')
+    birth_registered_1 = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    copy_birthcert_1 = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    marital_status_1 = models.CharField(max_length=4, null=True, choices=MARITAL_STATUS_CHOICES, default='1')
 
-    not_yet_listed = models.CharField(max_length=4, choices=PERSON_NOT_YET_LISTED_CHOICES, blank=True, default='')
-    additional_booklet = models.CharField(max_length=4, choices=ADDITIONAL_BOOKLET_CHOICES, blank=True, default='')
+    not_yet_listed = models.CharField(max_length=4, null=True, choices=PERSON_NOT_YET_LISTED_CHOICES, blank=True, default='')
+    additional_booklet = models.CharField(max_length=4, null=True, choices=ADDITIONAL_BOOKLET_CHOICES, blank=True, default='')
 
 
     #3C
@@ -219,3 +271,31 @@ class CensusFormModel(models.Model):
     tenure_status_of_housing = models.CharField(max_length=200, null=True, choices=TENURE_STATUS, default='')
     acquisition_of_housing = models.CharField(max_length=200, null=True, choices=ACQUISITION_HOUSE, default='')
     acquisition_of_housing_specify = models.CharField(max_length=200, null=True, blank=True)
+
+    #3G
+    loans_relatives = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    gov_assistance = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    private_bank = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    employer_assistance = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    private_person = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    h3_other = models.CharField(max_length=200, null=True, blank=True)
+    monthly_rental_house = models.CharField(max_length=4, null=True, choices=MONTHLY_RENTAL, default='')
+    other_residential = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    agricultural_land = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    agricultural_land_reform = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    h11_other = models.CharField(max_length=200, null=True, blank=True)
+
+    #3H
+    crop_farm = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    poultry_farm = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    aquafarm = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    fishing_activity = models.CharField(max_length=4, null=True, choices=CLOSED_CHOICES, blank=True, default='')
+    h12_other = models.CharField(max_length=200, null=True, blank=True)
+    language_specify = models.CharField(max_length=200, null=True, blank=True)
+    h14_province = models.CharField(max_length=200, null=True, blank=True)
+    h14_municipality = models.CharField(max_length=200, null=True, blank=True)
+    conveniences = models.CharField(max_length=200, null=True, blank=True)
+    ict_devices = models.CharField(max_length=200, null=True, blank=True)
+    vehicles = models.CharField(max_length=200, null=True, blank=True)
+    internet_access = models.CharField(max_length=200, null=True, choices=INTERNET_ACCESS_CHOICES, default='')
+    internet_use = models.CharField(max_length=200, null=True, blank=True)

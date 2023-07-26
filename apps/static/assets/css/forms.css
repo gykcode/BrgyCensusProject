@@ -258,10 +258,36 @@ opacity: 0.8;
   overflow: hidden;
 }
 
-.boxGridChildLeftBottom{
+.boxGridChildWihoutLeftBottom{
   padding: 10px;
   border: 2px solid black;
   border-left: none;
+  border-bottom: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWihoutLeftTop{
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  border-top: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildTopRight {
+  padding: 10px;
+  border: 2px solid black;
+  border-bottom: none;
+  border-left: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutBottom {
+  padding: 10px;
+  border: 2px solid black;
   border-bottom: none;
   color: black;
   overflow: hidden;
@@ -339,10 +365,10 @@ hr {
   width: max-content !important;
 }
 
-/* input[type="date"]::-
-webkit-calendar-picker-indicator, 
-input[type="date"]::
--webkit-inner-spin-button, 
-input[type="date"]::-webkit-clear-button { 
-  display: none;
-} */
+.checkboxInput {
+  width: max-content !important;
+}
+
+.spanBlock {
+  display: inline-block !important;
+}

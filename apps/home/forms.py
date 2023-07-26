@@ -1,10 +1,63 @@
 from django import forms
-from .models import CensusFormModel
+from .models import CensusNewFormModel
 import datetime
 
+CONVENIENCES_CHOICES = [
+            ('A', 'a. Refrigerator/ freezer'),
+            ('B', 'b. Stove with oven/ gas range'),
+            ('C', 'c. Microwave oven'),
+            ('D', 'd. Washing Machine'),
+            ('E', 'e. Air Conditioner'),
+            ('F', 'f. Electric fan and other cooling equipment'),
+        ]
+ICT_DEVICES_CHOICES = [
+            ('G', 'g. Radio/ radio cassete (AM, PM, and transistor)'),
+            ('H', 'h. Television'),
+            ('I', 'i. CD/ DVD/ VCD'),
+            ('J', 'j. Audio component/ stereo set/ karaoke/ videoke'),
+            ('K', 'k. Landline/ wireless telephone'),
+            ('L', 'l. Mobile phone'),
+            ('M', 'm. Tablet'),
+            ('N', 'n. Personal computer (desktop, laptop, notebook, netbook, and others)'),
+        ]
+VEHICLES_CHOICES = [
+            ('O', 'o. Car/ van/ jeep/ truck'),
+            ('P', 'p. Motorcycle/ motor scooter/ tricycle'),
+            ('Q', 'q. Bicycle/ pedicap'),
+            ('R', 'r. Motorized boat/ banca'),
+            ('S', 's. Nonmotorized boat/ banca'),
+        ]
+INTERNET_USE_CHOICES = [
+            ('A', 'a. Home'),
+            ('B', 'b. Work'),
+            ('C', 'c. School'),
+            ('D', 'd. Another person\'s home'),
+            ('E', 'e. Public place'),
+            ('F', 'f. Private establishment'),
+            ('G', 'g. Internet cafe/ computer shop'),
+            ('H', 'h. In mobility'),
+        ]
 class CensusForm(forms.ModelForm):
+    conveniences = forms.MultipleChoiceField(
+        choices=CONVENIENCES_CHOICES,
+        widget=forms.CheckboxSelectMultiple(attrs={'class': 'checkboxInput'}),
+    )
+    ict_devices = forms.MultipleChoiceField(
+        choices=ICT_DEVICES_CHOICES,
+        widget=forms.CheckboxSelectMultiple(attrs={'class': 'checkboxInput'}),
+    )
+    vehicles = forms.MultipleChoiceField(
+        choices=VEHICLES_CHOICES,
+        widget=forms.CheckboxSelectMultiple(attrs={'class': 'checkboxInput'}),
+    )
+    internet_use = forms.MultipleChoiceField(
+        choices=INTERNET_USE_CHOICES,
+        widget=forms.CheckboxSelectMultiple(attrs={'class': 'checkboxInput'}),
+    )
+
+    
     class Meta:
-        model = CensusFormModel
+        model = CensusNewFormModel
         fields = [
             #3A
             'enumeration_area_number',
@@ -85,6 +138,34 @@ class CensusForm(forms.ModelForm):
             'tenure_status_of_housing',
             'acquisition_of_housing',
             'acquisition_of_housing_specify',
+
+            #3G
+            'loans_relatives',
+            'gov_assistance',
+            'private_bank',
+            'employer_assistance',
+            'private_person',
+            'h3_other',
+            'monthly_rental_house',
+            'other_residential',
+            'agricultural_land',
+            'agricultural_land_reform',
+            'h11_other',
+
+            #3H
+            'crop_farm',
+            'poultry_farm',
+            'aquafarm',
+            'fishing_activity',
+            'h12_other',
+            'language_specify',
+            'h14_province',
+            'h14_municipality',
+            'conveniences',
+            'ict_devices',
+            'vehicles',
+            'internet_access',
+            'internet_use',
         ]  # Or specify the specific fields you want to include
 
         widgets= {
@@ -112,7 +193,7 @@ class CensusForm(forms.ModelForm):
             'mode_of_data_collection': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1'}),
             'appointment_date_time_1' : forms.DateTimeInput(attrs={'type': 'datetime-local', 'class': 'form-control col-7 inputBorder mt-1 mr-1 mb-2'}),
            
-            #3B
+            # 3B
             'residing_fullname_1': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
             'relationship_to_head_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1'}),
             'gender_1': forms.Select(attrs={'class': 'form-control col-12 inputBorder mt-1'}),
@@ -170,6 +251,34 @@ class CensusForm(forms.ModelForm):
             'tenure_status_of_housing': forms.RadioSelect(attrs={'class': 'radioInput'}),
             'acquisition_of_housing': forms.RadioSelect(attrs={'class': 'radioInput', 'onchange': 'handle3FChange()'}),
             'acquisition_of_housing_specify': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder ', 'readonly': 'readonly'}),
+
+            #3G
+            'loans_relatives': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'gov_assistance': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'private_bank': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'employer_assistance': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'private_person': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'h3_other': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+            'monthly_rental_house': forms.RadioSelect(attrs={'class': 'radioInput'}),
+            'other_residential': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'agricultural_land': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'agricultural_land_reform': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'h11_other': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+
+            # #3H
+            'crop_farm': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'poultry_farm': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'aquafarm': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'fishing_activity': forms.Select(attrs={'class': 'form-control col-12 inputBorder'}), 
+            'h12_other': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+            'language_specify': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder '}),
+            'h14_province': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder', 'placeholder': 'province'}),
+            'h14_municipality': forms.TextInput(attrs={'class': 'form-control col-12 inputBorder', 'placeholder': 'municipality'}),
+            # 'conveniences': forms.CheckboxSelectMultiple(attrs={'class': 'checkboxInput'}),
+            # 'ict_devices': forms.CheckboxSelectMultiple(attrs={'class': 'checkboxInput'}),
+            # 'vehicles': forms.CheckboxSelectMultiple(attrs={'class': 'checkboxInput'}),
+            'internet_access': forms.RadioSelect(attrs={'class': 'radioInput'}),
+            # 'internet_use': forms.CheckboxSelectMultiple(attrs={'class': 'checkboxInput'}),
         }
 
 

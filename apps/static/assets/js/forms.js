@@ -1,6 +1,11 @@
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
+function test(){
+
+  console.log("pumasok")
+}
+
 function showTab(n) {
   var x = document.getElementsByClassName("step");
   x[n].style.display = "block";
@@ -89,6 +94,20 @@ function handle3CChange() {
   }
 }
 
+// function handle3DChange() {
+//   var schoolAttend = document.getElementById('id_attend_school_1');
+//   var provinceSchool = document.getElementById('id_province_school_attended_1');
+//   var municipalitySchool = document.getElementById('id_municipality_school_attended_1');
+  
+//   if (schoolAttend.value === 'Yes') {
+//     provinceSchool.removeAttribute('readonly');
+//     municipalitySchool.removeAttribute('readonly');
+//   } else {
+//     provinceSchool.setAttribute('readonly', 'readonly');
+//     municipalitySchool.setAttribute('readonly', 'readonly');
+//   }
+// }
+
 function handle3EChange() {
   var childrenBorned = document.getElementById('id_children_borned_1');
   var childrenStillLiving = document.getElementById('id_children_still_living_1');
@@ -123,6 +142,5 @@ function handle3FChange() {
   } else {
     acquisitionHouseSpecify.setAttribute('readonly', 'readonly');
   }
-
-
 }
+
