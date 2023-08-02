@@ -148,19 +148,22 @@
 														</div>
 														<div class="row col-12 no-gutters">
 															<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
-																<div class="visitAlign">DATE & TIME CREATED<br><span class="text-muted titleFont">MONTH/DAY/YEAR HH:MM</span></div>
+																<div class="visitAlign">DATE & TIME ENDED<br><span class="text-muted titleFont">MONTH/DAY/YEAR HH:MM</span></div>
 															</div>
 															{{ form.date_time_ended_1 }}
 														</div>
 														<div class="row col-12 no-gutters">
 															<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
-																<div class="visitAlign">RESULT<br><span class="text-muted titleFont">MONTH/DAY/YEAR HH:MM</span></div>
+																<div class="visitAlign">RESULT</div>
 															</div>
-															{{ form.result_1 }}
+															<div class="col-7 d-flex align-items-center">
+																{{ form.result_1 }}
+															</div>
+															
 														</div>
 														<div class="row col-12 no-gutters">
 															<div class="col-4 d-flex align-items-center justify-content-center mr-4 ml-2 font-weight-bold">
-																<div class="visitAlign">RESULT DESCRIPTION<br><span class="text-muted titleFont">MONTH/DAY/YEAR HH:MM</span></div>
+																
 															</div>
 															{{ form.result_description_1 }}
 														</div>
@@ -468,12 +471,12 @@
 															<div class="col-2 boxTitle">f</div>
 														</div>
 														<div class="row">
-															<div class="col-2 boxGridChildLeftBottom">{{form.health_problem_a_1}}</div>
-															<div class="col-2 boxGridChildLeftBottom">{{form.health_problem_b_1}}</div>
-															<div class="col-2 boxGridChildLeftBottom">{{form.health_problem_c_1}}</div>
-															<div class="col-2 boxGridChildLeftBottom">{{form.health_problem_d_1}}</div>
-															<div class="col-2 boxGridChildLeftBottom">{{form.health_problem_e_1}}</div>
-															<div class="col-2 boxGridChildLeftBottom">{{form.health_problem_f_1}}</div>
+															<div class="col-2 boxGridChildWihoutLeftBottom">{{form.health_problem_a_1}}</div>
+															<div class="col-2 boxGridChildWihoutLeftBottom">{{form.health_problem_b_1}}</div>
+															<div class="col-2 boxGridChildWihoutLeftBottom">{{form.health_problem_c_1}}</div>
+															<div class="col-2 boxGridChildWihoutLeftBottom">{{form.health_problem_d_1}}</div>
+															<div class="col-2 boxGridChildWihoutLeftBottom">{{form.health_problem_e_1}}</div>
+															<div class="col-2 boxGridChildWihoutLeftBottom">{{form.health_problem_f_1}}</div>
 														</div>
 													</div>
 												</div>
@@ -656,12 +659,370 @@
 											</div>
 										</div>
 										
+										<!-- step six -->
+										<div class="step">
+											<div class="boxGrid form-row mb-2">
+												<div class="row justify-content-left col-12">
+													<div class="col-auto"><h4 class="fw-bold">3E</h4></div>
+												</div>
+												<div class="row justify-content-center col-12 titleEdit">POPULATION CENSUS QUESTIONS</div>
+
+												<div class=" row col-12 ml-1">
+													<div class=" boxGridChildWithoutRight col-3">
+														<h5 class="fw-bold">GENERAL INSTRUCTION</h5>
+													</div>
+													<div class="boxGridChildWithoutLeft col-9">
+														<div class="row col-12 fw-bold">1. WRITE THE NUMBER OR CODE CORRESPONDING TO THE ANSWER IN THE BOX.</div>
+														<div class="row col-12 fw-bold">2. WRITE THE ANSWER/DETAILED ON THE LINE PROVIDED FOR "OTHER, SPECIFY". IN ITEMS B1 AND B3 TO B6 AND H2.</div>
+													</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class=" boxGridChildWithoutTopBottom col-10 justify-content-center">
+														<div class="fw-bold">ITEMS B1 TO B4 AND B7 ARE TO BE ANSWERED THROUGH OBSERVATION, IF DOUBTFUL, ASK THE RESPONDENT</div>
+													</div>
+
+													<div class=" boxGridChildOnlyRight col-2 justify-content-center">
+														<div class="fw-bold">CODE</div>
+													</div>
+
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGrid">
+														<div class="row col-12">
+															<div class="fw-bold">B1 Type of building</div>
+															{{form.type_of_building}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWithoutLeft">{{form.type_of_building_specify}}</div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="fw-bold">B2 Number of floors of the building</div>
+															{{form.number_of_floors}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWithoutTopLeft"></div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="fw-bold">B8 Year Building was built</div>
+															{{form.year_building_built}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWithoutTopLeft"></div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="fw-bold">D1 Floor area of the housing unit</div>
+															{{form.floor_area_of_housing}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWithoutTopLeft"></div>
+												</div>
+												
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="col-12">
+															<div class="fw-bold">H1 Tenure status of the housing unit/lot</div>
+															{{form.tenure_status_of_housing}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWithoutTopLeft"></div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="col-12">
+															<div class="fw-bold">H2 Acquisition of the housing unit</div>
+															{{form.acquisition_of_housing}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWithoutTopLeft">{{form.acquisition_of_housing_specify}}</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Step seven -->
+										<div class="step">
+											<div class="boxGrid form-row mb-2">
+												<div class="row justify-content-left col-12">
+													<div class="col-auto"><h4 class="fw-bold">3G</h4></div>
+												</div>
+												<div class="row justify-content-center col-12 titleEdit">POPULATION CENSUS QUESTIONS</div>
+
+												<div class=" row col-12 ml-1">
+													<div class=" boxGridChildWithoutRight col-3">
+														<h5 class="fw-bold">GENERAL INSTRUCTION</h5>
+													</div>
+													<div class="boxGridChildWithoutLeft col-9">
+														<div class="row col-12 fw-bold">1. WRITE THE NUMBER OR CODE CORRESPONDING TO THE ANSWER IN THE BOX.</div>
+														<div class="row col-12 fw-bold">2. WRITE THE ANSWER/DETAILED ON THE LINE PROVIDED FOR "OTHER, SPECIFY" IN ITEMS H3 AND H5 TO H11.</div>
+													</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class=" boxGridChildWithoutTopBottom col-10 justify-content-center"></div>
+
+													<div class=" boxGridChildOnlyRight col-2 justify-content-center">
+														<div class="fw-bold">CODE</div>
+													</div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutBottom">
+														<div class="row col-12">
+															<div class="row col-12">
+																<div class="fw-bold">H3 Source of financing of the housing unit</div><br>
+															</div>
+															<div class="row col-12">Did this household avail of the following source of financing in the construction/purchase of this housing unit? CODE "1" IF THE ANSWER IS "YES"; CODE "2" IF THE ANSWER IS "NO". </div>
+														</div>
+													</div>
+
+													<div class="col-2 boxGridChildTopRight"></div>
+
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="row col-12">
+																a. Own resources/interest-free loans from relatives/friends
+															</div>
+															<div class="row col-12">
+																b. Government assistance, PAG-IBIG,GSIS, SSS, LBP, and others
+															</div>
+															<div class="row col-12">
+																c. Private bank/ foundation/ cooperative
+															</div>
+															<div class="row col-12">
+																d. Employer assistance
+															</div>
+															<div class="row col-12">
+																e. Private persons
+															</div>
+															<div class="row col-12">
+																f. Others/ Specify
+															</div>
+														</div>
+													</div>
+
+													<div class="col-2 boxGridChildWithoutTopLeft">
+														<div class="row col-12">{{form.loans_relatives}}</div>
+														<div class="row col-12">{{form.gov_assistance}}</div>
+														<div class="row col-12">{{form.private_bank}}</div>
+														<div class="row col-12">{{form.employer_assistance}}</div>
+														<div class="row col-12">{{form.private_person}}</div>
+														<div class="row col-12">{{form.h3_other}}</div>
+													</div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="fw-bold">H4 Monthly rental of the housing unit</div>
+															<div>How much is the monthly rental of this housing unit?</div>
+															{{form.monthly_rental_house}}
+														</div>
+													</div>
+													<div class="col-2 boxGridChildWihoutLeftTop"></div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTopBottom">
+														<div class="row col-12">
+															<div class="row col-12">
+																<div class="fw-bold">H11 Land ownership</div>
+															</div>
+															<div class="row col-12">
+																Does any member of this household own the following...?<br>
+																CODE "1" IF THE ANSWER IS "YES"; CODE "2" IF THE ANSWER IS "NO".
+															</div>
+														</div>
+													</div>
+
+													<div class="col-2 boxGridChildOnlyRight"></div>
+
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															a. Other residential land/s
+														</div>
+														<div class="row col-12">
+															b. Agricultural land/s
+														</div>
+														<div class="row col-12">
+															c. Agricultural land/s required through Comprehensive Agrarian Reform Program, as an agragrian reform beneficiary
+														</div>
+														<div class="row col-12">
+															d. Others, SPECIFY
+														</div>
+													</div>
+
+													<div class="col-2 boxGridChildWithoutTopLeft">
+														{{form.other_residential}}
+														{{form.agricultural_land}}
+														{{form.agricultural_land_reform}}
+														{{form.h11_other}}
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Step eight -->
+										<div class="step">
+											<div class="boxGrid form-row mb-2">
+												<div class="row justify-content-left col-12">
+													<div class="col-auto"><h4 class="fw-bold">3H</h4></div>
+												</div>
+												<div class="row justify-content-center col-12 titleEdit">POPULATION CENSUS QUESTIONS</div>
+
+												<div class=" row col-12 ml-1">
+													<div class=" boxGridChildWithoutRight col-3">
+														<h5 class="fw-bold">GENERAL INSTRUCTION</h5>
+													</div>
+													<div class="boxGridChildWithoutLeft col-9">
+														<div class="row col-12 fw-bold">1. WRITE THE ANSWER/ DETAILED DESCRIPTION ON THE LINE PROVIDED FOR "OTHERS, SPECIFY IN THE ITEM H12 AND SPECIFIC ANSWER ON ITEMS H13 AND H14".</div>
+														<div class="row col-12 fw-bold">2. WRITE CODE "1" IF THE ANSWER IS "YES", OTHERWISE, WRITE CODE "2" IF THE ANSWER IS "NO" FOR ITEMS H15, H16, AND H17.</div>
+													</div>
+												</div>
+
+												<div class="row col-12 ml-1">
+													<div class=" boxGridChildWithoutTopBottom col-10 justify-content-center"></div>
+
+													<div class=" boxGridChildOnlyRight col-2 justify-content-center">
+														<div class="fw-bold">CODE</div>
+													</div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutBottom">
+														<div class="row col-12">
+															<div class="row col-12">
+																<div class="fw-bold">H12 Presence of operator in crop farming, livestock and/or poultry raising, aquaculture, fishing, and other farm/activity</div><br>
+															</div>
+															<div class="row col-12">In 2019, is there any member of this household who operated a/an...?</div>
+														</div>
+													</div>
+
+													<div class="col-2 boxGridChildTopRight"></div>
+
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="row col-12">
+																a. Crop farm
+															</div>
+															<div class="row col-12">
+																b. Livestock and/or poultry farm
+															</div>
+															<div class="row col-12">
+																c. Aquafarm
+															</div>
+															<div class="row col-12">
+																d. Fishing activity
+															</div>
+															<div class="row col-12">
+																f. Others/ Specify
+															</div>
+														</div>
+													</div>
+
+													<div class="col-2 boxGridChildWithoutTopLeft">
+														<div class="row col-12">{{form.crop_farm}}</div>
+														<div class="row col-12">{{form.poultry_farm}}</div>
+														<div class="row col-12">{{form.aquafarm}}</div>
+														<div class="row col-12">{{form.fishing_activity}}</div>
+														<div class="row col-12">{{form.h12_other}}</div>
+													</div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="fw-bold">H13 Laguage/ dialect generally spoken at home</div>
+															<div>What is the language/ dialect generally spoken at home by members of this household?</div>
+														</div>
+													</div>
+
+													<div class="col-2 boxGridChildWihoutLeftTop">{{form.language_specify}}</div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="col-10">
+																<div class="fw-bold">H14 Residence five (5) years from now</div>
+																<div>In what province and city/ municipality does this household intend to reside five (5) years from now, that is, by May 1,2025?</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="col-2 boxGridChildWithoutTopLeft">
+														{{form.h14_province}}
+														{{form.h14_municipality}}
+													</div>
+												</div>
+												
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="fw-bold custom-break">H15 Presence of household conveniences/ information and communication technology (ICT) devices/vehicles</div>
+															<div>Does this household have the following household conveniences/ devices/ vehicles in working condition?</div>
+														</div>
+
+														<div class="row col-12">
+															{{form.conveniences}}<br><br>
+														</div>
+
+														<div class="row col-12">
+															<div class="fw-bold">ICT devices</div>
+															{{form.ict_devices}}<br><br>
+														</div>
+
+														<div class="row col-12">
+															<div class="fw-bold">Vehicles</div>
+															{{form.vehicles}}<br><br>
+														</div>
+													</div>
+
+													<div class="col-2 boxGridChildWithoutTopLeft"></div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="fw-bold">H16 Internet Access</div>
+															<div>What type of internet access is/ are available at home?</div>
+															{{form.internet_access}}
+														</div>
+													</div>
+
+													<div class="col-2 boxGridChildWithoutTopLeft"></div>
+												</div>
+
+												<div class=" row col-12 ml-1">
+													<div class="col-10 boxGridChildWithoutTop">
+														<div class="row col-12">
+															<div class="fw-bold">H17 Internet Use</div>
+															<div>Where did household member/s use the internet in the last three (3) months?</div>
+															{{form.internet_use}}
+														</div>
+													</div>
+
+													<div class="col-2 boxGridChildWithoutTopLeft"></div>
+												</div>
+
+											</div>
+										</div>
+
 										<!-- start previous / next buttons -->
 										<div class="form-footer d-flex justify-content-between">
 											<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
 											<button type="button" class="btn btn-md nextBtn" id="nextBtn" onclick="nextPrev(1)">Next</button>
-											<button type="submit" id="submitBtn" style="display: none;">Submit</button>
-											<!-- <button type="submit">submit</button> -->
+											<button type="submit" id="submitBtn" style="display: none;" onclick="test()">Submit</button>
 										</div>
 										
 									</form>

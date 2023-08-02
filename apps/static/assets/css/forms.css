@@ -22,7 +22,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 700px 700px;
-  opacity: 0.2; /* Set the desired opacity value */
+  opacity: 0.05; /* Set the desired opacity value */
   z-index: 0;
 }
 
@@ -258,10 +258,36 @@ opacity: 0.8;
   overflow: hidden;
 }
 
-.boxGridChildLeftBottom{
+.boxGridChildWihoutLeftBottom{
   padding: 10px;
   border: 2px solid black;
   border-left: none;
+  border-bottom: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWihoutLeftTop{
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  border-top: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildTopRight {
+  padding: 10px;
+  border: 2px solid black;
+  border-bottom: none;
+  border-left: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutBottom {
+  padding: 10px;
+  border: 2px solid black;
   border-bottom: none;
   color: black;
   overflow: hidden;
@@ -276,6 +302,11 @@ opacity: 0.8;
   border-radius: 10px;
   /* margin-right: 2px; */
 }
+.selectPads{
+  display: flex; 
+  align-items: center;
+}
+
 .pads{
   padding: 10px;
 }
@@ -330,10 +361,14 @@ hr {
   font-weight: 900;
 }
 
-/* input[type="date"]::-
-webkit-calendar-picker-indicator, 
-input[type="date"]::
--webkit-inner-spin-button, 
-input[type="date"]::-webkit-clear-button { 
-  display: none;
-} */
+.radioInput {
+  width: max-content !important;
+}
+
+.checkboxInput {
+  width: max-content !important;
+}
+
+.spanBlock {
+  display: inline-block !important;
+}

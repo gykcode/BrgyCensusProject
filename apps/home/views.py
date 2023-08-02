@@ -20,7 +20,6 @@ def create_forms(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = CensusForm(request.POST)
-        # print(form,'kjhkjhjgjhgfghgfhhjkjhkjhjhj')
         if form.is_valid():
             # Process the form data
             # 3A
@@ -109,7 +108,43 @@ def create_forms(request):
             age_firstmarriage_1 = form.cleaned_data['age_firstmarriage_1']
             remarks_3E = form.cleaned_data['remarks_3E']
 
+            #3F
+            type_of_building = form.cleaned_data['type_of_building']
+            type_of_building_specify = form.cleaned_data['type_of_building_specify']
+            number_of_floors = form.cleaned_data['number_of_floors']
+            year_building_built = form.cleaned_data['year_building_built']
+            floor_area_of_housing = form.cleaned_data['floor_area_of_housing']
+            tenure_status_of_housing = form.cleaned_data['tenure_status_of_housing']
+            acquisition_of_housing = form.cleaned_data['acquisition_of_housing']
+            acquisition_of_housing_specify = form.cleaned_data['acquisition_of_housing_specify']
 
+            #3G
+            loans_relatives = form.cleaned_data['loans_relatives']
+            gov_assistance = form.cleaned_data['gov_assistance']
+            private_bank = form.cleaned_data['private_bank']
+            employer_assistance = form.cleaned_data['employer_assistance']
+            private_person = form.cleaned_data['private_person']
+            h3_other = form.cleaned_data['h3_other']
+            monthly_rental_house = form.cleaned_data['monthly_rental_house']
+            other_residential = form.cleaned_data['other_residential']
+            agricultural_land = form.cleaned_data['agricultural_land']
+            agricultural_land_reform = form.cleaned_data['agricultural_land_reform']
+            h11_other = form.cleaned_data['h11_other']
+
+            #3H
+            crop_farm = form.cleaned_data['crop_farm']
+            poultry_farm = form.cleaned_data['poultry_farm']
+            aquafarm = form.cleaned_data['aquafarm']
+            fishing_activity = form.cleaned_data['fishing_activity']
+            h12_other = form.cleaned_data['h12_other']
+            language_specify = form.cleaned_data['language_specify']
+            h14_province = form.cleaned_data['h14_province']
+            h14_municipality = form.cleaned_data['h14_municipality']
+            conveniences = form.cleaned_data['conveniences']
+            ict_devices = form.cleaned_data['ict_devices']
+            vehicles = form.cleaned_data['vehicles']
+            internet_access = form.cleaned_data['internet_access']
+            internet_use = form.cleaned_data['internet_use']
 
             #saving the input fields into the model
             form.save()
@@ -121,8 +156,6 @@ def create_forms(request):
         form = CensusForm()
 
     return render(request, 'home/forms.html', {'form': form})
-
-
 
 
 

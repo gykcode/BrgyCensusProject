@@ -1,6 +1,11 @@
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
+function test(){
+
+  console.log("pumasok")
+}
+
 function showTab(n) {
   var x = document.getElementsByClassName("step");
   x[n].style.display = "block";
@@ -89,18 +94,53 @@ function handle3CChange() {
   }
 }
 
-function handle3DChange() {
-  var schoolattendedSelect = document.getElementById('id_attend_school_1');
-  var provinceField = document.getElementById('id_province_school_attended_1');
-  var municipalityField = document.getElementById('id_municipality_school_attended_1');
+// function handle3DChange() {
+//   var schoolAttend = document.getElementById('id_attend_school_1');
+//   var provinceSchool = document.getElementById('id_province_school_attended_1');
+//   var municipalitySchool = document.getElementById('id_municipality_school_attended_1');
   
-  if (schoolattendedSelect.value === 'No') {
-    provinceField.removeAttribute('readonly');
-    municipalityField.removeAttribute('readonly');
+//   if (schoolAttend.value === 'Yes') {
+//     provinceSchool.removeAttribute('readonly');
+//     municipalitySchool.removeAttribute('readonly');
+//   } else {
+//     provinceSchool.setAttribute('readonly', 'readonly');
+//     municipalitySchool.setAttribute('readonly', 'readonly');
+//   }
+// }
+
+function handle3EChange() {
+  var childrenBorned = document.getElementById('id_children_borned_1');
+  var childrenStillLiving = document.getElementById('id_children_still_living_1');
+  var childrenALive = document.getElementById('id_children_alive_specificdate_1');
+  
+  console.log(childrenBorned.value);
+  if (childrenBorned.value === '00') {
+    childrenStillLiving.removeAttribute('readonly');
+    childrenALive.removeAttribute('readonly');
     
   } else {
-    provinceField.setAttribute('readonly', 'readonly');
-    municipalityField.setAttribute('readonly', 'readonly');
+    childrenStillLiving.setAttribute('readonly', 'readonly');
+    childrenALive.setAttribute('readonly', 'readonly');
     
   }
 }
+
+function handle3FChange() {
+  var buildingType = document.getElementById('id_type_of_building_7');
+  var buildingTypeSpecify = document.getElementById('id_type_of_building_specify');
+  var acquisitionHouse = document.getElementById('id_acquisition_of_housing_5');
+  var acquisitionHouseSpecify = document.getElementById('id_acquisition_of_housing_specify');
+  
+  if (buildingType.checked) {
+    buildingTypeSpecify.removeAttribute('readonly');
+  } else {
+    buildingTypeSpecify.setAttribute('readonly', 'readonly');
+  }
+
+  if (acquisitionHouse.checked) {
+    acquisitionHouseSpecify.removeAttribute('readonly');
+  } else {
+    acquisitionHouseSpecify.setAttribute('readonly', 'readonly');
+  }
+}
+
