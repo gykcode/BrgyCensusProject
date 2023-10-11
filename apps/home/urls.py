@@ -6,6 +6,8 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('', views.forms, name='forms'),
 
+    path('create_forms', views.create_forms, name='create_forms'),
+
     # Matches any html file
     re_path(r'^.*\.*', views.pages, name='pages'),
 ]

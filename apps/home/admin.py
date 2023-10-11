@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CensusFormModel
+from .models import CensusNewFormModel
 
 # Register your models here.
-admin.site.register(CensusFormModel)
+admin.site.register(CensusNewFormModel)

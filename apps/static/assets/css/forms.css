@@ -1,156 +1,374 @@
-.multisteps-form__progress {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-  }
-  
-  .multisteps-form__progress-btn {
-    transition-property: all;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
-    transition-delay: 0s;
-    position: relative;
-    padding-top: 20px;
-    color: rgba(108, 117, 125, 0.7);
-    text-indent: -9999px;
-    border: none;
-    background-color: transparent;
-    outline: none !important;
-    cursor: pointer;
-  }
-  @media (min-width: 500px) {
-    .multisteps-form__progress-btn {
-      text-indent: 0;
-    }
-  }
-  .multisteps-form__progress-btn:before {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    display: block;
-    width: 13px;
-    height: 13px;
-    content: '';
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    transition: all 0.15s linear 0s, -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
-    transition: all 0.15s linear 0s, transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
-    transition: all 0.15s linear 0s, transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s, -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
-    border: 2px solid currentColor;
-    border-radius: 50%;
-    background-color: #fff;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-  .multisteps-form__progress-btn:after {
-    position: absolute;
-    top: 5px;
-    left: calc(-50% - 13px / 2);
-    transition-property: all;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
-    transition-delay: 0s;
-    display: block;
-    width: 100%;
-    height: 2px;
-    content: '';
-    background-color: currentColor;
-    z-index: 1;
-  }
-  .multisteps-form__progress-btn:first-child:after {
-    display: none;
-  }
-  .multisteps-form__progress-btn.js-active {
-    color: #007bff;
-  }
-  .multisteps-form__progress-btn.js-active:before {
-    -webkit-transform: translateX(-50%) scale(1.2);
-            transform: translateX(-50%) scale(1.2);
-    background-color: currentColor;
-  }
-  
-  .CensusForm {
-    position: relative;
-  }
-  
-  .multisteps-form__panel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    opacity: 0;
-    visibility: hidden;
-  }
-  .multisteps-form__panel.js-active {
-    height: auto;
-    opacity: 1;
-    visibility: visible;
-  }
-  .multisteps-form__panel[data-animation="scaleOut"] {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  .multisteps-form__panel[data-animation="scaleOut"].js-active {
-    transition-property: all;
-    transition-duration: 0.2s;
-    transition-timing-function: linear;
-    transition-delay: 0s;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  .multisteps-form__panel[data-animation="slideHorz"] {
-    left: 50px;
-  }
-  .multisteps-form__panel[data-animation="slideHorz"].js-active {
-    transition-property: all;
-    transition-duration: 0.25s;
-    transition-timing-function: cubic-bezier(0.2, 1.13, 0.38, 1.43);
-    transition-delay: 0s;
-    left: 0;
-  }
-  .multisteps-form__panel[data-animation="slideVert"] {
-    top: 30px;
-  }
-  .multisteps-form__panel[data-animation="slideVert"].js-active {
-    transition-property: all;
-    transition-duration: 0.2s;
-    transition-timing-function: linear;
-    transition-delay: 0s;
-    top: 0;
-  }
-  .multisteps-form__panel[data-animation="fadeIn"].js-active {
-    transition-property: all;
-    transition-duration: 0.3s;
-    transition-timing-function: linear;
-    transition-delay: 0s;
-  }
-  .multisteps-form__panel[data-animation="scaleIn"] {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  .multisteps-form__panel[data-animation="scaleIn"].js-active {
-    transition-property: all;
-    transition-duration: 0.2s;
-    transition-timing-function: linear;
-    transition-delay: 0s;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+/* stepper */
 
-  .boxGrid{
-    padding: 10px;
-    border: 2px solid black;
-    color: black;
-    width: 60vw;
+/* .background{
+  background-image: url("/static/assets/img/Background_Logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 700px 700px;
+  /* width: 50%; 
+} */
+.background {
+  position: relative;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/static/assets/img/Background_LogoColored.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 700px 700px;
+  opacity: 0.05; /* Set the desired opacity value */
+  z-index: 0;
+}
+
+.nextBtn{
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .background::before {
+    background-size: 400px 400px;
   }
-  .titleSpan{
-    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .background::before {
+    background-size: 250px 250px;
   }
-  .inputBorder{
-    border-color: #888585;
-    line-height: 1;
-    /* margin-right: 2px; */
-  }
-  .marg{
-    padding: 10px;
-  }
+}
+
+#CensusFormId .step {
+  position: relative;
+  flex: 1;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#CensusFormId {
+  /* max-width: 500px; */
+  /* background-color: #ffffff; */
+  /* margin: 40px auto; */
+  padding: 40px;
+  border-radius: 12px;
+}
+#CensusFormId .form-header {
+  gap: 5px;
+  text-align: center;
+  font-size: .9em;
+}
+#CensusFormId .form-header .stepIndicator {
+  position: relative;
+  flex: 1;
+  padding-bottom: 30px;
+}
+#CensusFormId .form-header .stepIndicator.active {
+  font-weight: 600;
+}
+#CensusFormId .form-header .stepIndicator.finish {
+  font-weight: 600;
+  color: #009688;
+}
+#CensusFormId .form-header .stepIndicator::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 9;
+  width: 20px;
+  height: 20px;
+  background-color: #d5efed;
+  border-radius: 50%;
+  border: 3px solid #ecf5f4;
+}
+#CensusFormId .form-header .stepIndicator.active::before {
+  background-color: #0781c8;
+  border: 3px solid #d5f9f6;
+}
+#CensusFormId .form-header .stepIndicator.finish::before {
+  background-color: #16dac3;
+  border: 3px solid #b7e1dd;
+}
+#CensusFormId .form-header .stepIndicator::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 100%;
+  height: 3px;
+  background-color: #f3f3f3;
+}
+#CensusFormId .form-header .stepIndicator.active::after {
+  background-color: #a7ede8;
+}
+#CensusFormId .form-header .stepIndicator.finish::after {
+  background-color: #1bc0af;
+}
+#CensusFormId .form-header .stepIndicator:last-child:after {
+  display: none;
+}
+#CensusFormId input {
+  padding: 10px 15px;
+  width: 100%;
+  font-size: 1em;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+#CensusFormId input:focus {
+  border: 1px solid #009688;
+  outline: 0;
+}
+#CensusFormId input.invalid {
+  border: 1px solid #ffaba5;
+}
+#CensusFormId .step {
+display: none;
+}
+#CensusFormId .form-footer{
+  overflow:auto;
+  gap: 20px;
+}
+#CensusFormId .form-footer button{
+  background-color: #009688;
+  border: 1px solid #009688 !important;
+  color: #ffffff;
+  border: none;
+  padding: 13px 30px;
+  font-size: 1em; 
+  cursor: pointer;
+  border-radius: 5px;
+  /* flex: 1; */
+  margin-top: 5px;
+}
+#CensusFormId .form-footer button:hover {
+opacity: 0.8;
+}
+
+#CensusFormId .form-footer #prevBtn {
+  background-color: #fff;
+  color: #009688;
+}
+
+.PSASize{
+  width: 50%;
+}
+.boxGrid{
+  padding: 10px;
+  border: 2px solid black;
+  color: black;
+  /* width: 60vw; */
+  overflow: hidden;
+}
+
+.boxGridChildLeft {
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  border-bottom: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildRight {
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChild3BInstruc {
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  border-right: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildOnlyBot {
+  padding: 10px;
+  border: 2px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutLeft {
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutTop {
+  padding: 10px;
+  border: 2px solid black;
+  border-top: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutTopLeft {
+  padding: 10px;
+  border: 2px solid black;
+  border-top: none;
+  border-left: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutTopBottom {
+  padding: 10px;
+  border: 2px solid black;
+  border-top: none;
+  border-bottom: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutRight {
+  padding: 10px;
+  border: 2px solid black;
+  border-right: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildOnlyRight{
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWihoutLeftBottom{
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  border-bottom: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWihoutLeftTop{
+  padding: 10px;
+  border: 2px solid black;
+  border-left: none;
+  border-top: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildTopRight {
+  padding: 10px;
+  border: 2px solid black;
+  border-bottom: none;
+  border-left: none;
+  color: black;
+  overflow: hidden;
+}
+
+.boxGridChildWithoutBottom {
+  padding: 10px;
+  border: 2px solid black;
+  border-bottom: none;
+  color: black;
+  overflow: hidden;
+}
+
+.titleSpan{
+  text-decoration: underline;
+}
+.inputBorder{
+  border-color: #888585;
+  line-height: 1;
+  border-radius: 10px;
+  /* margin-right: 2px; */
+}
+.selectPads{
+  display: flex; 
+  align-items: center;
+}
+
+.pads{
+  padding: 10px;
+}
+.padsWithHolder {
+  padding-top: 10px;
+}
+
+.boxTitle{
+  border: 2px solid #b3afafee;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #b3afafee;
+  text-align: center;
+}
+.titleFont{
+  font-size: smaller;
+}
+
+::placeholder {
+  text-align: center; 
+}
+
+/* or, for legacy browsers */
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.visitNumberAlign{
+  white-space: pre-line;
+}
+
+.horizontal-line {
+  height: 1px;
+  background-color: #333;
+}
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 95%;               
+  background-color:#838080;
+  height: 1.5px;
+  margin: 5px;
+}
+.custom-row {
+  display: flex;
+}
+
+.titleEdit{
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.radioInput {
+  width: max-content !important;
+}
+
+.checkboxInput {
+  width: max-content !important;
+}
+
+.spanBlock {
+  display: inline-block !important;
+}

@@ -1,167 +1,146 @@
-const DOMstrings = {
-  stepsBtnClass: 'multisteps-form__progress-btn',
-  stepsBtns: document.querySelectorAll(`.multisteps-form__progress-btn`),
-  stepsBar: document.querySelector('.multisteps-form__progress'),
-  stepsForm: document.querySelector('.CensusForm'),
-  stepsFormTextareas: document.querySelectorAll('.multisteps-form__textarea'),
-  stepFormPanelClass: 'multisteps-form__panel',
-  stepFormPanels: document.querySelectorAll('.multisteps-form__panel'),
-  stepPrevBtnClass: 'js-btn-prev',
-  stepNextBtnClass: 'js-btn-next' };
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
 
-  function test(){
-  lName = document.querySelector("#lName");
-  fName = document.querySelector("#fName");
+function test(){
 
-  console.log('1: '+lName.value+' 2: '+fName.value);
+  console.log("pumasok")
+}
+
+function showTab(n) {
+  var x = document.getElementsByClassName("step");
+  x[n].style.display = "block";
+
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
   }
+
+  if (n == (x.length - 1)) {
+    // Hide next button and show submit button
+    document.getElementById("nextBtn").style.display = "none";
+    document.getElementById("submitBtn").style.display = "inline";
+  } else {
+    // Show next button and hide submit button
+    document.getElementById("nextBtn").style.display = "inline";
+    document.getElementById("submitBtn").style.display = "none";
+  }
+
+  fixStepIndicator(currentTab);
+}
+
+function nextPrev(n) {
+  var x = document.getElementsByClassName("step");
+
+  if (n == 1 && !validateForm()) return false;
+
+  x[currentTab].style.display = "none";
+
+  currentTab = currentTab + n;
+
+  if (currentTab >= x.length) {
+    document.getElementById("signUpForm").submit();
+    return false;
+  }
+
+  showTab(currentTab);
+}
+
+function validateForm() {
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("step");
+  y = x[currentTab].getElementsByTagName("input");
+
+  return valid;
+}
+
+function fixStepIndicator(n) {
+  var i, x = document.getElementsByClassName("stepIndicator");
+
+  for (i = 0; i < x.length; i++) {
+    if (i <= n) {
+      x[i].classList.add("active");
+    } else {
+      x[i].classList.remove("active");
+    }
+  }
+}
+
+function handleResultChange() {
+  var resultSelect = document.getElementById('id_result_1');
+  var descriptionField = document.getElementById('id_result_description_1');
   
-  // const removeClasses = (elemSet, className) => {
+  if (resultSelect.value === '5') {
+      descriptionField.removeAttribute('readonly');
+  } else {
+      descriptionField.setAttribute('readonly', 'readonly');
+  }
+}
+
+function handle3CChange() {
+  var citizenResultSelect = document.getElementById('id_citizen_1');
+  var otherCountryField = document.getElementById('id_other_country_1');
+  var ethnicityField = document.getElementById('id_ethnicity_1');
+
+  if (citizenResultSelect.value === 'Yes') {
+    otherCountryField.removeAttribute('readonly');
+    ethnicityField.setAttribute('readonly', 'readonly');
+  } else if (citizenResultSelect.value === 'No') {
+    ethnicityField.removeAttribute('readonly');
+    otherCountryField.setAttribute('readonly', 'readonly');
+  } else {
+    otherCountryField.setAttribute('readonly', 'readonly');
+    ethnicityField.setAttribute('readonly', 'readonly');
+  }
+}
+
+// function handle3DChange() {
+//   var schoolAttend = document.getElementById('id_attend_school_1');
+//   var provinceSchool = document.getElementById('id_province_school_attended_1');
+//   var municipalitySchool = document.getElementById('id_municipality_school_attended_1');
   
-  //   elemSet.forEach(elem => {
+//   if (schoolAttend.value === 'Yes') {
+//     provinceSchool.removeAttribute('readonly');
+//     municipalitySchool.removeAttribute('readonly');
+//   } else {
+//     provinceSchool.setAttribute('readonly', 'readonly');
+//     municipalitySchool.setAttribute('readonly', 'readonly');
+//   }
+// }
+
+function handle3EChange() {
+  var childrenBorned = document.getElementById('id_children_borned_1');
+  var childrenStillLiving = document.getElementById('id_children_still_living_1');
+  var childrenALive = document.getElementById('id_children_alive_specificdate_1');
   
-  //     elem.classList.remove(className);
+  console.log(childrenBorned.value);
+  if (childrenBorned.value === '00') {
+    childrenStillLiving.removeAttribute('readonly');
+    childrenALive.removeAttribute('readonly');
+    
+  } else {
+    childrenStillLiving.setAttribute('readonly', 'readonly');
+    childrenALive.setAttribute('readonly', 'readonly');
+    
+  }
+}
+
+function handle3FChange() {
+  var buildingType = document.getElementById('id_type_of_building_7');
+  var buildingTypeSpecify = document.getElementById('id_type_of_building_specify');
+  var acquisitionHouse = document.getElementById('id_acquisition_of_housing_5');
+  var acquisitionHouseSpecify = document.getElementById('id_acquisition_of_housing_specify');
   
-  //   });
-  
-  // };
-  
-  // const findParent = (elem, parentClass) => {
-  
-  //   let currentNode = elem;
-  
-  //   while (!currentNode.classList.contains(parentClass)) {
-  //     currentNode = currentNode.parentNode;
-  //   }
-  
-  //   return currentNode;
-  
-  // };
-  
-  // const getActiveStep = elem => {
-  //   return Array.from(DOMstrings.stepsBtns).indexOf(elem);
-  // };
-  
-  // const setActiveStep = activeStepNum => {
-  
-  //   removeClasses(DOMstrings.stepsBtns, 'js-active');
-  
-  //   DOMstrings.stepsBtns.forEach((elem, index) => {
-  
-  //     if (index <= activeStepNum) {
-  //       elem.classList.add('js-active');
-  //     }
-  
-  //   });
-  // };
-  
-  // const getActivePanel = () => {
-  
-  //   let activePanel;
-  
-  //   DOMstrings.stepFormPanels.forEach(elem => {
-  
-  //     if (elem.classList.contains('js-active')) {
-  
-  //       activePanel = elem;
-  
-  //     }
-  
-  //   });
-  
-  //   return activePanel;
-  
-  // };
-  
-  // const setActivePanel = activePanelNum => {
-  
-  //   removeClasses(DOMstrings.stepFormPanels, 'js-active');
-  
-  //   DOMstrings.stepFormPanels.forEach((elem, index) => {
-  //     if (index === activePanelNum) {
-  
-  //       elem.classList.add('js-active');
-  
-  //       setFormHeight(elem);
-  
-  //     }
-  //   });
-  
-  // };
-  
-  // const formHeight = activePanel => {
-  
-  //   const activePanelHeight = activePanel.offsetHeight;
-  
-  //   DOMstrings.stepsForm.style.height = `${activePanelHeight}px`;
-  
-  // };
-  
-  // const setFormHeight = () => {
-  //   const activePanel = getActivePanel();
-  
-  //   formHeight(activePanel);
-  // };
-  
-  // DOMstrings.stepsBar.addEventListener('click', e => {
-  
-  //   const eventTarget = e.target;
-  
-  //   if (!eventTarget.classList.contains(`${DOMstrings.stepsBtnClass}`)) {
-  //     return;
-  //   }
-  
-  //   const activeStep = getActiveStep(eventTarget);
-  
-  //   setActiveStep(activeStep);
-  
-  //   setActivePanel(activeStep);
-  // });
-  
-  // DOMstrings.stepsForm.addEventListener('click', e => {
-  
-  //   const eventTarget = e.target;
-  
-  //   if (!(eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) || eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)))
-  //   {
-  //     return;
-  //   }
-  
-  //   const activePanel = findParent(eventTarget, `${DOMstrings.stepFormPanelClass}`);
-  
-  //   let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel);
-  
-  //   if (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) {
-  //     activePanelNum--;
-  
-  //   } else {
-  
-  //     activePanelNum++;
-  
-  //   }
-  
-  //   setActiveStep(activePanelNum);
-  //   setActivePanel(activePanelNum);
-  
-  // });
-  
-  // window.addEventListener('load', setFormHeight, false);
-  
-  // window.addEventListener('resize', setFormHeight, false);
-  
-  
-  // const setAnimationType = newType => {
-  //   DOMstrings.stepFormPanels.forEach(elem => {
-  //     elem.dataset.animation = newType;
-  //   });
-  // };
-  
-  // //changing animation
-  // const animationSelect = document.querySelector('.pick-animation__select');
-  
-  // animationSelect.addEventListener('change', () => {
-  //   const newAnimationType = animationSelect.value;
-  
-  //   setAnimationType(newAnimationType);
-  // });
-  
+  if (buildingType.checked) {
+    buildingTypeSpecify.removeAttribute('readonly');
+  } else {
+    buildingTypeSpecify.setAttribute('readonly', 'readonly');
+  }
+
+  if (acquisitionHouse.checked) {
+    acquisitionHouseSpecify.removeAttribute('readonly');
+  } else {
+    acquisitionHouseSpecify.setAttribute('readonly', 'readonly');
+  }
+}
+
