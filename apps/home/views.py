@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django import template
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
@@ -5,14 +6,12 @@ from django.template import loader
 from django.urls import reverse
 from .forms import CensusForm
 from .models import CensusFormModel
+from django import forms
 
 # Create your views here.
 @login_required(login_url="/login/")
 def index(request):
-    context = {'segment': 'index'}
-
-    html_template = loader.get_template('home/index.html')
-    return HttpResponse(html_template.render(context, request))
+    return render(request, 'home/index.html')
 
 def forms(request):
     # if this is a POST request we need to process the form data
@@ -43,8 +42,9 @@ def forms(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = CensusForm()
-
+    print('test')
     return render(request, 'home/forms.html', {'form': form})
+
 
 @login_required(login_url="/login/")
 def pages(request):
